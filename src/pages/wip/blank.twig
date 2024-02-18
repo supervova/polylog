@@ -1,0 +1,32 @@
+
+{% extends "/pages/base/base.twig" %}
+
+{% block config %}
+{{ parent() }}
+
+{% set post = {
+  lang: "ru",
+  title: "",
+  description: site.description,
+  image: site.logo,
+  link: site.url,
+  is_blank: true,
+  body_classes: "search search-results"
+} %}
+{% endblock %}
+
+{% block html_head %}
+  {{ parent() }}
+
+  {# <style>
+  </style> #}
+{% endblock %}
+
+{# MAIN CONTENT ------------------------------------------------------------- #}
+{% block content %}
+  <main class="main main-index">
+    <h1>Биг бада-бум!</h1>
+  </main>
+{% endblock %}
+
+

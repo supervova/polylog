@@ -1,0 +1,33 @@
+.sr-only {
+  border: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+/* Google Captcha */
+.grecaptcha-badge {
+  display: none !important;
+}
+
+.is-centered-text {
+  text-align: center !important;
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.is-visible {
+  opacity: 1;
+  pointer-events: all;
+  visibility: visible;
+}

@@ -1,0 +1,38 @@
+.privacy__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.1;
+  color: $color-primary;
+}
+
+@include media-breakpoint-up(lg) {
+  .privacy__title {
+    margin-bottom: 60px;
+    margin-left: 332px;
+    margin-right: 83px;
+    font-size: 36px;
+  }
+
+  .privacy__content {
+    margin-left: 332px;
+    margin-right: 83px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .privacy__title {
+    margin-bottom: 72px;
+    margin-left: 427px;
+    margin-right: 107px;
+    font-size: 44px;
+  }
+
+  .privacy__content {
+    margin-left: 427px;
+    margin-right: 107px;
+  }
+}

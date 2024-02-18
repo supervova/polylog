@@ -1,0 +1,389 @@
+.agency-experts {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.agency-experts__title {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: -28px;
+  font-family: var(--font-family-title);
+  font-size: 56px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, .3);
+  pointer-events: none;
+}
+
+.agency-experts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 -12px;
+}
+
+.agency-experts__item {
+  flex-basis: 174px;
+  flex-shrink: 0;
+  flex-grow: 1;
+  width: 50%;
+  max-width: 379px;
+  margin: 0 12px;
+}
+
+.agency-experts__item:nth-of-type(2) {
+  margin-top: 40px;
+}
+
+.agency-experts__item-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.agency-experts__item-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.agency-experts__item-name {
+  margin-right: $size-2;
+  font-weight: bold;
+  font-size: var(--font-size-big);
+  line-height: 1.1;
+}
+
+.agency-experts__blockquote {
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-big);
+  font-weight: 800;
+  line-height: var(--line-height-big);
+  padding-top: var(--padding-top-big);
+  padding-bottom: var(--padding-bottom-big);
+  margin-top: $size-line;
+  padding: 0;
+
+  @include media-breakpoint-up(lg) {
+    margin-left: 0;
+    position: absolute;
+    bottom: 58px;
+    left: calc(50% - 398px);
+    width: 380px;
+    z-index: 1;
+  }
+
+  @include media-breakpoint-up(xl) {
+    font-size: 3.6rem;
+    // bottom: 140px;
+    left: calc(50% - 515px);
+    width: 493px;
+  }
+}
+
+.agency-team {
+  position: relative;
+  padding-top: 40px;
+  background-color: $color-ink-title;
+  background-image: linear-gradient(
+    180deg,
+    #{$color-primary} 216px,
+    #{color-ink-max} 216px
+  );
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 60px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 80px;
+  }
+}
+
+.agency-team__title {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: -36px;
+  font-family: var(--font-family-title);
+  font-size: 68px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, .3);
+  pointer-events: none;
+}
+
+.agency-team__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(174px, 1fr));
+  grid-column-gap: $size-3;
+  grid-row-gap: 40px;
+}
+
+.agency-team__item-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.agency-team__item-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: $color-ink-inverse-normal;
+}
+
+.agency-team__item-name {
+  margin-right: $size-2;
+  font-weight: bold;
+  font-size: var(--font-size-big);
+  line-height: 1.1;
+}
+
+.agency-conclusion {
+  padding: 40px 0;
+  color: $color-ink-inverse-normal;
+  background-color: $color-ink-title;
+}
+
+.agency-conclusion__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.agency-conclusion__text {
+  margin-bottom: 40px;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: $size-line;
+  line-height: 1.4;
+}
+
+.agency-conclusion__text p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $size-3;
+}
+
+.agency-conclusion__text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.agency-conclusion__vacancies {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: $size-3;
+  line-height: 1.1;
+  color: $color-primary;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all $duration-xxs;
+}
+
+.agency-conclusion__vacancies svg {
+  flex-shrink: 0;
+  width: $size-4;
+  height: auto;
+  margin-left: $size-2;
+}
+
+.agency-conclusion__vacancies svg path {
+  fill: $color-primary;
+  transition: all $duration-xxs;
+}
+
+.agency-conclusion__vacancies:hover,
+.agency-conclusion__vacancies:focus {
+  color: $color-ink-inverse-normal;
+}
+
+.agency-conclusion__vacancies:hover svg,
+.agency-conclusion__vacancies:focus svg {
+  animation-name: arrow;
+  animation-duration: $duration-md;
+  animation-timing-function: $easing-base;
+}
+
+.agency-conclusion__vacancies:hover svg path,
+.agency-conclusion__vacancies:focus svg path {
+  fill: $color-ink-inverse-normal;
+}
+
+@include media-breakpoint-up(lg) {
+  .agency-experts {
+    margin-bottom: 100px;
+  }
+
+  .agency-experts__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding-top: 168px;
+    font-size: 178px;
+    z-index: 1;
+  }
+
+  .agency-experts__list {
+    justify-content: space-between;
+    width: 796px;
+    margin: 0 auto;
+  }
+
+  .agency-experts__item {
+    flex-basis: initial;
+    flex-grow: initial;
+    width: 379px;
+    max-width: none;
+    margin: 0;
+  }
+
+  .agency-experts__item:nth-of-type(2) {
+    position: relative;
+    margin-top: 80px;
+    z-index: 1;
+  }
+
+  .agency-experts__item-photo {
+    margin-bottom: $size-2;
+  }
+
+  .agency-team__title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+    padding-top: 328px;
+    font-size: 216px;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, .3);
+  }
+
+  .agency-team__list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 36px;
+  }
+
+  .agency-team__item:nth-of-type(3n + 2) {
+    margin-top: 60px;
+  }
+
+  .agency-team__item:nth-of-type(1n + 4) {
+    position: relative;
+  }
+
+  .agency-team__item-photo {
+    margin-bottom: $size-2;
+  }
+
+  .agency-conclusion {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .agency-conclusion__wrapper {
+    padding-left: 410px;
+    padding-right: 83px;
+  }
+
+  .agency-conclusion__text {
+    margin-bottom: 60px;
+    font-size: $size-4;
+  }
+
+  .agency-conclusion__text p {
+    margin-bottom: $size-line;
+  }
+
+  .agency-conclusion__vacancies {
+    font-size: 22px;
+  }
+
+  .agency-conclusion__vacancies svg {
+    width: 36px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .agency-experts {
+    margin-bottom: 140px;
+  }
+
+  .agency-experts__title {
+    padding-top: 216px;
+    font-size: 192px;
+  }
+
+  .agency-experts__list {
+    width: 1026px;
+  }
+
+  .agency-experts__item {
+    width: 493px;
+  }
+
+  .agency-experts__item:nth-of-type(2) {
+    margin-top: 120px;
+  }
+
+  .agency-team__title {
+    padding-top: 352px;
+    font-size: 272px;
+  }
+
+  .agency-team__list {
+    grid-column-gap: 40px;
+  }
+
+  .agency-conclusion__wrapper {
+    padding-left: 507px;
+    padding-right: 107px;
+  }
+
+  .agency-conclusion__text {
+    font-size: 36px;
+  }
+
+  .agency-conclusion__text p {
+    margin-bottom: $size-4;
+  }
+
+  .agency-conclusion__vacancies {
+    font-size: $size-line;
+  }
+}
+
+.page-template-page-agency .agency-experts__item-photo,
+.page-template-page-agency .agency-team__item-photo {
+  @include media-breakpoint-down(lg) {
+    filter: grayscale(100%);
+  }
+}

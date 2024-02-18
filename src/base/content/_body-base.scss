@@ -1,0 +1,41 @@
+// -----------------------------------------------------------------------------
+// FONTS
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: var(--font-family-title);
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local('Gilroy Light'), local('Gilroy-Light'),
+    url('../fonts/Gilroy-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: local('Gilroy ExtraBold'), local('Gilroy-ExtraBold'),
+    url('../fonts/Gilroy-ExtraBold.woff2') format('woff2');
+}
+
+// -----------------------------------------------------------------------------
+// DOCUMENT
+// -----------------------------------------------------------------------------
+
+body {
+  background-color: $color-background-base;
+  color: $color-ink-base;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  margin: 0;
+  padding: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+

@@ -1,0 +1,56 @@
+.kpi {
+  padding: $size-line;
+  color: $color-ink-inverse-normal;
+  background-color: $color-primary-bg-dark;
+
+  @include media-breakpoint-up(lg) {
+    .kpi {
+      padding: 40px;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    .kpi {
+      padding: 48px;
+    }
+  }
+}
+
+.kpi__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -8px -12px;
+
+  @include media-breakpoint-up(lg) {
+    margin: -16px -20px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: -20px -32px;
+  }
+}
+
+.kpi__item {
+  margin: $size-1 12px;
+  text-align: center;
+
+  @include media-breakpoint-up(lg) {
+    margin: $size-2 $size-3;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin: $size-3 $size-4;
+  }
+}
+
+.kpi__value {
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  margin-bottom: 4px;
+}

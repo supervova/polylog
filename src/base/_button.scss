@@ -1,0 +1,39 @@
+.btn {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-base);
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0;
+  padding: $size-1 $size-2;
+  transition: all $duration-xxs;
+}
+
+.btn svg path {
+  transition: all $duration-xxs;
+}
+
+.btn.is-lg {
+  background-color: $color-primary-bg-dark;
+  color: $color-ink-inverse-normal;
+  font-size: $size-3;
+  padding: $size-line;
+
+  @include media-breakpoint-up(lg) {
+    padding: 36px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding: 40px;
+  }
+}

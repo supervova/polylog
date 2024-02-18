@@ -1,0 +1,16 @@
+@use 'sass:map';
+
+.list-view {
+  list-style: none;
+  margin: 0 auto;
+  padding: $size-line var(--padding-x-container) ($size-line * 3);
+  max-width: map.get($container-max-widths, lg);
+}
+
+.list-view__counter {
+  color: $color-ink-2ry;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
+}

@@ -1,0 +1,226 @@
+.clients {
+  overflow: hidden;
+  padding: 60px 0;
+}
+
+.clients__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.clients__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(134px, 1fr));
+  grid-column-gap: $size-3;
+  grid-row-gap: $size-3;
+  place-items: center center;
+}
+
+.clients__item {
+  position: relative;
+}
+
+.clients__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity $duration-xl $easing-base;
+}
+
+.clients__item img:nth-of-type(1) {
+  animation-name: pulse;
+  animation-timing-function: $easing-base;
+  animation-iteration-count: infinite;
+  animation-duration: $duration-huge;
+  animation-direction: alternate;
+}
+
+.clients__item img:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: pulse;
+  animation-timing-function: $easing-base;
+  animation-iteration-count: infinite;
+  animation-duration: $duration-huge;
+  animation-direction: alternate-reverse;
+}
+
+.clients__wrapper {
+  flex-wrap: wrap;
+}
+
+.clients .clients__title {
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.clients .clients__list {
+  max-width: 100%;
+  width: 100%;
+}
+
+@include media-breakpoint-up(lg) {
+  .clients {
+    padding: 120px 0;
+    padding: 160px 0;
+  }
+
+  .clients__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .clients__title {
+    max-width: 320px;
+    margin-bottom: 0;
+    font-size: 36px;
+  }
+
+  .clients__list {
+    width: 628px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 36px;
+    grid-row-gap: 28px;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .clients .clients__list {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+
+@include media-breakpoint-up(xl) {
+  .clients {
+    padding: 150px 0;
+  }
+
+  .clients__title {
+    max-width: 360px;
+    font-size: 44px;
+  }
+
+  .clients__list {
+    width: 813px;
+    grid-column-gap: 40px;
+    grid-row-gap: $size-4;
+  }
+}
+
+
+.clients__item-1 img:nth-of-type(1) {
+  animation-duration: $duration-king-size;
+}
+
+.clients__item-1 img:nth-of-type(2) {
+  animation-duration: $duration-king-size;
+}
+
+.clients__item-2 img:nth-of-type(1) {
+  animation-duration: 11s;
+}
+
+.clients__item-2 img:nth-of-type(2) {
+  animation-duration: 11s;
+}
+
+.clients__item-3 img:nth-of-type(1) {
+  animation-duration: 14s;
+}
+
+.clients__item-3 img:nth-of-type(2) {
+  animation-duration: 14s;
+}
+
+.clients__item-4 img:nth-of-type(1) {
+  animation-duration: $duration-huge;
+}
+
+.clients__item-4 img:nth-of-type(2) {
+  animation-duration: $duration-huge;
+}
+
+.clients__item-5 img:nth-of-type(1) {
+  animation-duration: 7.2s;
+}
+
+.clients__item-5 img:nth-of-type(2) {
+  animation-duration: 7.2s;
+}
+
+.clients__item-6 img:nth-of-type(1) {
+  animation-duration: 12.5s;
+}
+
+.clients__item-6 img:nth-of-type(2) {
+  animation-duration: 12.5s;
+}
+
+.clients__item-7 img:nth-of-type(1) {
+  animation-duration: 6.6s;
+}
+
+.clients__item-7 img:nth-of-type(2) {
+  animation-duration: 6.6s;
+}
+
+.clients__item-8 img:nth-of-type(1) {
+  animation-duration: 9.8s;
+}
+
+.clients__item-8 img:nth-of-type(2) {
+  animation-duration: 9.8s;
+}
+
+.clients__item-9 img:nth-of-type(1) {
+  animation-duration: 9s;
+}
+
+.clients__item-9 img:nth-of-type(2) {
+  animation-duration: 9s;
+}
+
+.clients__item-10 img:nth-of-type(1) {
+  animation-duration: 10s;
+}
+
+.clients__item-10 img:nth-of-type(2) {
+  animation-duration: 10s;
+}
+
+.clients__item-11 img:nth-of-type(1) {
+  animation-duration: 13s;
+}
+
+.clients__item-11 img:nth-of-type(2) {
+  animation-duration: 13s;
+}
+
+.clients__item-12 img:nth-of-type(1) {
+  animation-duration: 7.5s;
+}
+
+.clients__item-12 img:nth-of-type(2) {
+  animation-duration: 7.5s;
+}
+
+.home .clients {
+  @include media-breakpoint-down(sm) {
+    padding-top: 35px;
+  }
+}
+

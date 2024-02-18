@@ -1,0 +1,165 @@
+/* stylelint-disable selector-list-comma-newline-after, scss/percent-placeholder-pattern */
+h1, .h1, %h1,
+h2, .h2, %h2 {
+  color: $color-ink-title;
+
+  // OpenType kerning
+  font-family: $font-family-title;
+  font-feature-settings: 'kern' 1, 'liga' 1;
+
+  @include media-breakpoint-up(lg) {
+    letter-spacing: -.1rem;
+  }
+}
+
+// H1 and hero titles
+h1, .h1, %h1 {
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-title);
+  line-height: var(--line-height-title);
+  margin: 0;
+  padding-top: var(--padding-top-title);
+  padding-bottom: var(--padding-bottom-title);
+
+  .eyebrow + & {
+    margin-top: var(--margin-top-title-minus);
+  }
+}
+
+.section-title {
+  font-size: var(--font-size-h2);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+// Heading 2
+h2, .h2, %h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-h2);
+  line-height: var(--line-height-h2);
+  margin: 0;
+  padding-top: var(--padding-top-h2);
+  padding-bottom: var(--padding-bottom-h2);
+
+  &:not(:first-child):not([class]) {
+    margin-top: var(--margin-top-h2-plus);
+  }
+}
+
+.h2.is-highlight {
+  color: $color-ink-primary-fill;
+}
+
+h2:empty {
+  display: none;
+}
+
+
+// -----------------------------------------------------------------------------
+
+// SUBHEADS & SUBTITLES
+
+.subhead {
+  @extend %h2;
+}
+
+.text-block,
+.case {
+  h3,
+  h4 {
+    font-weight: 800;
+  }
+
+  h2 + h3 {
+    margin-top: -20px;
+  }
+
+  h2 + h4 {
+    margin-top: -$size-2;
+  }
+
+  h3 + h4 {
+    margin-top: -$size-2;
+  }
+
+  h4 {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    margin: $size-2 0;
+  }
+
+  @include media-breakpoint-up(lg) {
+    h2 + h3 {
+      margin-top: -28px;
+    }
+
+    h2 + h4 {
+      margin-top: -24px;
+    }
+
+    h3 {
+      margin: 28px 0;
+    }
+
+    h3 + h4 {
+      margin-top: -24px;
+    }
+
+    h4 {
+      margin: $size-line 0;
+    }
+  }
+
+  @include media-breakpoint-up(xl) {
+    h2 + h3 {
+      margin-top: -36px;
+    }
+
+    h2 + h4 {
+      margin-top: -32px;
+    }
+
+    h3 {
+      margin: 36px 0;
+    }
+
+    h3 + h4 {
+      margin-top: -32px;
+    }
+
+    h4 {
+      margin: $size-4 0;
+    }
+  }
+}
+
+h3, .h3, %big {
+  font-size: var(--font-size-big);
+  line-height: var(--line-height-big);
+  margin: 0;
+  padding-top: var(--padding-top-big);
+  padding-bottom: var(--padding-bottom-big);
+}
+
+h4, h5, h6 {
+  font-size: 100%;
+  line-height: var(--line-height-base);
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-base);
+
+  &:not(:first-child):not([class]) {
+    margin-top: var(--margin-top-subhead-plus);
+  }
+}
+
+h3, .h3, %big,
+h4, h5, h6 {
+  font-weight: 700;
+  margin: 0;
+
+  &:not(:first-child):not([class]) {
+    margin-top: var(--margin-top-subhead-plus);
+  }
+}

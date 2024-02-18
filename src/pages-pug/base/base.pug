@@ -1,0 +1,27 @@
+block config
+  include /pages-pug/base/config
+
+doctype html
+html(lang=page.lang, prefix='og: http://ogp.me/ns#')
+  head
+
+    block head
+      include /pages-pug/base/head
+
+  body(class=page.bodyClasses || false)
+
+    block bodyPrefix
+      include /components/alert/alert
+
+    block header
+      include /components/header/header
+
+    //- CONTENT ----------------------------------------------------------------
+    block content
+
+
+    block footer
+      include /components/footer/footer
+
+    block bodySuffix
+

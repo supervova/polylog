@@ -1,0 +1,107 @@
+[data-tooltip] {
+  --background-color: var(#{$dark-beta});
+  --color: var(#{$light-beta});
+  --translate-x-body: -50%;
+  --translate-x-caret: -50%;
+
+  position: relative;
+
+  &:not(a):not(button):not(input):not(label):not(label span) {
+    border-bottom: .1rem dotted $color-border-dark;
+    cursor: help;
+    text-decoration: none;
+  }
+
+  &::before,
+  &::after {
+    background: var(--background-color);
+    border-radius: $shape-border-radius-sm;
+    color: var(--color);
+    content: attr(data-tooltip);
+    display: block;
+    font-size: var(--font-size-small);
+    font-style: normal;
+    font-weight: 400;
+    text-decoration: none;
+    padding: .9rem $size-1p5 .7rem;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: max-content;
+    max-width: $width-sm;
+    z-index: $zindex-tooltip;
+  }
+
+  // Body
+  &::before {
+    content: attr(data-tooltip);
+    transform: translate(var(--translate-x-body), -#{$size-half});
+  }
+
+  // Caret
+  &::after {
+    background-color: transparent;
+    border-left: $size-half solid transparent;
+    border-radius: 0;
+    border-right: $size-half solid transparent;
+    border-top: $size-half solid;
+    color: var(--background-color);
+    content: '';
+    padding: 0;
+    transform: translate(var(--translate-x-caret), 0);
+  }
+
+  // Display
+  &:focus-visible,
+  &:hover {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  // Animations, excluding touch devices
+  @media (hover: hover) and (pointer: fine) {
+    &:focus-visible,
+    &:hover {
+      &::before,
+      &::after {
+        animation-duration: $duration-xs;
+        animation-name: slide;
+      }
+
+      &::after {
+        animation-name: slideCaret;
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes slide {
+  from {
+    transform: translate(var(--translate-x-body), #{$size-1p5});
+    opacity: 0;
+  }
+  to {
+    transform: translate(var(--translate-x-body), -#{$size-half});
+    opacity: 1;
+  }
+}
+
+@keyframes slideCaret {
+  from {
+    opacity: 0;
+  }
+  50% {
+    transform: translate(var(--translate-x-caret), -#{$size-half});
+    opacity: 0;
+  }
+  to {
+    transform: translate(var(--translate-x-caret), 0);
+    opacity: 1;
+  }
+}

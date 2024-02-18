@@ -1,0 +1,23 @@
+extends /pages-pug/base/base.pug
+include /pages-pug/base/mixins
+
+//- FRONT MATTER ---------------------------------------------------------------
+
+append config
+  -
+    var page = {
+      lang: 'ru',
+      title: 'Тестовая стр',
+      description: site.description,
+      bodyClasses: 'page-template page-template-page-pr page-template-page-pr-php page page-id-215 logged-in',
+    }
+
+//- CONTENT --------------------------------------------------------------------
+
+block content
+
+  main.main.main-inner.main-pr
+    .pr
+      h1 Lorem ipsum dolor sit amet
+      p Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto dolores dolorum facilis, est esse illum non accusamus minus dolor harum mollitia commodi ducimus laboriosam, magni ipsa sint veniam rerum recusandae?
+      p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae ex ratione laboriosam deserunt eos rerum expedita, odio illum sit eius eum fugit animi explicabo in repellat tempora blanditiis at doloremque?

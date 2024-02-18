@@ -1,0 +1,188 @@
+{% extends "/pages/base/base.twig" %}
+
+{% block config %}
+	{{ parent() }}
+
+	{% set post = {
+  lang: "ru",
+  title: "",
+  description: site.description,
+  image: site.logo,
+  link: site.url,
+  is_blank: true,
+  body_classes: "search search-results"
+} %}
+
+	{% set ExtraData = {
+    title: "Команда",
+    is_dev: true,
+    domain: 'xyz'
+} %}
+{% endblock %}
+
+{% block html_head %}
+	{{ parent() }}
+
+	<style>
+    .anim-top {
+      opacity: 1;
+    }
+	</style>
+{% endblock %}
+
+{# MAIN CONTENT ------------------------------------------------------------- #}
+{% block content %}
+
+	<main class="main main-inner main-agency">
+		<h1 class="sr-only">
+			Команда</h1>
+		<div class="agency">
+			<a name="agency-experts"></a>
+			<section class="agency-experts">
+				<h2 class="agency-experts__title">
+					<span>
+						Команда
+					</span>
+				</h2>
+				<div class="container">
+					<div class="agency-experts__wrapper">
+						<ul class="agency-experts__list">
+							<li class="agency-experts__item">
+								<img class="agency-experts__item-photo anim-item anim-item--no-hide anim-scale-opacity active" src="https://polylog.ru/wp-content/uploads/2020/10/oleg2.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/oleg2.jpg 2x" alt=""><div class="agency-experts__item-info">
+									<div class="agency-experts__item-name">
+										Олег Карпилов</div>
+									<div class="agency-experts__item-position">
+										Генеральный директор</div>
+								</div>
+							</li>
+							<li class="agency-experts__item">
+								<img class="agency-experts__item-photo anim-item anim-item--no-hide anim-scale-opacity active" src="https://polylog.ru/wp-content/uploads/2020/10/suchkov4.png" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/suchkov4.png 2x" alt=""><div class="agency-experts__item-info">
+									<div class="agency-experts__item-name">
+										Максим Сучков</div>
+									<div class="agency-experts__item-position">
+										Первый заместитель генерального директора</div>
+								</div>
+							</li>
+						</ul>
+						<blockquote class="agency-experts__blockquote anim-item anim-item--no-hide anim-right active">
+							«Полилог» – это люди. Креативные, с опытом в самых разных областях. Мы всегда рады тем, кто хочет себя проявить и готов принести пользу клиентам.</blockquote>
+					</div>
+				</div>
+			</section>
+			<section class="agency-team">
+				<h2 class="agency-team__title">
+					<span></span>
+				</h2>
+				<div class="container">
+					<ul class="agency-team__list">
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Надежда Первова<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/10/pervova.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/pervova.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Надежда Первова</div>
+								<div class="agency-team__item-position">
+									Заместитель генерального директора по PR</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Евгения Болтак<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/11/boltak3.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/11/boltak3.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Евгения Болтак</div>
+								<div class="agency-team__item-position">
+									Руководитель HR-департамента</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Роман Моложон<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/11/molozh3.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/11/molozh3.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Роман Моложон</div>
+								<div class="agency-team__item-position">
+									Руководитель департамента спецпроектов</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Никита Сетов<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/10/setov.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/setov.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Никита Сетов</div>
+								<div class="agency-team__item-position">
+									Заместитель руководителя департамента спецпроектов</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Светлана Платонова<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/10/platonova.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/platonova.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Светлана Платонова</div>
+								<div class="agency-team__item-position">
+									Заместитель руководителя департамента спецпроектов</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Александр Молчанов<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/10/molchanov.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/molchanov.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Александр Молчанов</div>
+								<div class="agency-team__item-position">
+									Руководитель департамента мероприятий</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Анна Белоусова<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/10/belousova.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/belousova.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Анна Белоусова</div>
+								<div class="agency-team__item-position">
+									Руководитель департамента мероприятий</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Марина Сигай<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2021/07/marina-sigay.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2021/07/marina-sigay.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Марина Сигай</div>
+								<div class="agency-team__item-position">
+									Руководитель PR-департамента</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Людмила Богатырева<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2021/07/lyda-bogatyreva.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2021/07/lyda-bogatyreva.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Людмила Богатырева</div>
+								<div class="agency-team__item-position">
+									Руководитель департамента цифровых решений</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Екатерина Вески<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2020/10/veski.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2020/10/veski.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Екатерина Вески</div>
+								<div class="agency-team__item-position">
+									Руководитель департамента мониторинга и анализа</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Анна Тарасова<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2021/12/anna-tarasova.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2021/12/anna-tarasova.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Анна Тарасова</div>
+								<div class="agency-team__item-position">
+									Пресс-секретарь</div>
+							</div>
+						</li>
+						<li class="agency-team__item anim-item anim-item--no-hide anim-top">
+							Максим Сигитов<img class="agency-team__item-photo" src="https://polylog.ru/wp-content/uploads/2022/10/maxim-sigitov.jpg" width="" height="" srcset="https://polylog.ru/wp-content/uploads/2022/10/maxim-sigitov.jpg 2x" alt=""><div class="agency-team__item-info">
+								<div class="agency-team__item-name">
+									Максим Сигитов</div>
+								<div class="agency-team__item-position">
+									Руководитель отдела маркетинга департамента цифровых решений</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<div class="agency-conclusion">
+				<div class="container agency-conclusion__wrapper">
+					<div class="agency-conclusion__text">
+						<p>«Полилог» основан в 2000 году профессиональными журналистами, людьми творческими и неравнодушными.</p>
+						<p>Многое в отрасли появлялось на наших глазах: мы были в числе первых, кто создавал новые технологии в сфере PR, GR и консалтинга. Мы постоянно стремимся осваивать инновационные направления и методики.</p>
+						<p>90% наших клиентов вместе с «Полилог» больше пяти-семи лет. К нам регулярно возвращаются с новыми задачами и проектами. Многие клиенты стали не только надежными партнерами, но и хорошими друзьями нашей компании.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+{% endblock %}

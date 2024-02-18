@@ -1,0 +1,57 @@
+.tag {
+  background: $color-primary-bg;
+  border-radius: $shape-border-radius-sm;
+  color: $color-ink-primary-text;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-feature-settings: 'tnum';
+  font-size: var(--font-size-small);
+  font-variant: tabular-nums;
+  font-weight: 500;
+  letter-spacing: .05rem;
+  line-height: 1;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  // text-transform: uppercase;
+  white-space: nowrap;
+  word-break: break-word;
+  padding: .9rem ($size-1 * 1.5) .7rem;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  transition: background $duration-xs;
+  vertical-align: baseline; // or middle
+  max-width: 16rem;
+  min-width: 2rem;
+  min-height: $size-4;
+
+  h1 &,
+  h2 &,
+  h3 & {
+    font-size: calc(100% / var(--font-scale-factor));
+
+    // Alternative. Keep the font-size, but raise it
+    // margin-top: -$size-half;
+    // vertical-align: super;
+  }
+}
+
+.tag[href]:hover {
+  background: lighten($color-primary-bg, 4%);
+  text-decoration: none;
+}
+
+.tag.is-error {
+  background: $color-primary-bg;
+  color: $color-ink-primary-text;
+}
+
+.tag.is-right,
+.tag + .tag {
+  margin-left: $size-1;
+}
+
+.tag.is-bottom {
+  margin-top: $size-1;
+}

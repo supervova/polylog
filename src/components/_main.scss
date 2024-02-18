@@ -1,0 +1,37 @@
+.main-inner {
+  padding-top: $size-3;
+}
+
+.main-blog,
+.main-article,
+.main-privacy {
+  margin-bottom: 60px;
+}
+
+.main-career {
+  overflow-x: hidden;
+}
+
+@include media-breakpoint-up(lg) {
+  .main-inner {
+    padding-top: $size-4;
+  }
+
+  .main-blog,
+  .main-article,
+  .main-privacy {
+    margin-bottom: 100px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .main-inner {
+    padding-top: 40px;
+  }
+
+  .main-blog,
+  .main-article,
+  .main-privacy {
+    margin-bottom: 140px;
+  }
+}

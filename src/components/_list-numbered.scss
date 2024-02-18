@@ -1,0 +1,45 @@
+.numbered-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+.numbered-list__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 244px;
+  padding-left: 60px;
+  font-size: var(--font-size-big);
+  line-height: 1.4;
+}
+
+.numbered-list__item p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $size-1;
+}
+
+.numbered-list__item p:last-of-type {
+  margin-bottom: 0;
+}
+
+.numbered-list__item::before {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, .3);
+  color: transparent;
+  content: counter(item);
+  counter-increment: item;
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-jumbo);
+  font-weight: 800;
+  line-height: var(--line-height-jumbo);
+  margin: auto;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--font-size-jumbo);
+}

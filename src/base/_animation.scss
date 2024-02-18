@@ -1,0 +1,305 @@
+.anim-right {
+  transform: translateX(-60%);
+  opacity: 0;
+  transition: all $duration-xl;
+}
+
+.anim-right.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.anim-left {
+  transform: translateX(60%);
+  opacity: 0;
+  transition: all $duration-xl;
+}
+
+.anim-left.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.anim-top {
+  transform: translateY(60%);
+  opacity: 0;
+  transition: all $duration-xl;
+}
+
+.anim-top.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.anim-bottom {
+  transform: translateY(-60%);
+  opacity: 0;
+  transition: all $duration-xl;
+}
+
+.anim-bottom.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.anim-scale-bottom {
+  transform-origin: top center;
+  transform: scaleY(.4) translateY(-60%);
+  transition: all $duration-xl;
+}
+
+.anim-scale-bottom.active {
+  transform: scaleY(1) translateY(0);
+}
+
+.anim-scale-opacity {
+  transform: scale(0);
+  opacity: 0;
+  transition: all $duration-xl;
+}
+
+.anim-scale-opacity.active {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.anim-opacity {
+  opacity: 0;
+  transition: all $duration-xl;
+}
+
+.anim-opacity.active {
+  opacity: 1;
+}
+
+.anim-item.active .anim-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.anim-item.active .anim-left {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.anim-item.active .anim-bottom {
+  transform: translateY(0);
+  opacity: 1;
+  max-width: 90%;
+}
+
+.anim-item.active .anim-top {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.anim-item.active .anim-scale-bottom {
+  transform: scaleY(1);
+}
+
+.anim-item.active .anim-scale-opacity {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.anim-item.active .anim-opacity {
+  opacity: 1;
+}
+
+@keyframes running-row {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(100vw - 100%));
+  }
+}
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-12px);
+  }
+
+  50% {
+    transform: translateX(0);
+  }
+
+  75% {
+    transform: translateX(-6px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-12px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-2 {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+// Animated lines
+
+.marquee {
+  background-color: $color-ink-title;
+  color: $color-ink-inverse-normal;
+  font-family: var(--font-family-title);
+  font-size: var(--font-size-big);
+  font-weight: 800;
+  line-height: var(--line-height-big);
+  margin: 0;
+  padding-top: var(--padding-top-big);
+  padding-bottom: var(--padding-bottom-big);
+  overflow: hidden;
+  text-transform: uppercase;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.marquee__item {
+  display: inline-block;
+  animation-name: marquee;
+  animation-duration: 36s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.marquee__item span {
+  margin-right: $size-3;
+}
+
+.marquee__item span:last-of-type {
+  margin-right: 0;
+}
+
+@include media-breakpoint-up(lg) {
+  .marquee {
+    font-size: $size-3;
+  }
+
+  .marquee__item span {
+    margin-right: 36px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .marquee {
+    font-size: $size-line;
+  }
+
+  .marquee__item span {
+    margin-right: 40px;
+  }
+}
+
+.consulting {
+  display: none;
+}
+
+@include media-breakpoint-up(lg) {
+  .consulting {
+    display: block;
+  }
+
+  .consulting__title {
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    margin-top: -10px;
+    margin-bottom: $size-line;
+  }
+
+  .consulting__title svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .consulting__line {
+    height: 1px;
+    background-color: $color-ink-title;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .consulting__title {
+    margin-bottom: 12px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  55% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

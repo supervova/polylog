@@ -1,0 +1,46 @@
+{% extends "/pages/base/base.twig" %}
+
+{% block config %}
+  {{ parent() }}
+
+  {% set post = {
+  lang: "ru",
+  title: "",
+  description: site.description,
+  image: site.logo,
+  link: site.url,
+  is_blank: true,
+  body_classes: "search search-results"
+} %}
+{% endblock %}
+
+{% block html_head %}
+  {{ parent() }}
+
+
+  {# <style></style> #}
+{% endblock %}
+
+{# MAIN CONTENT ------------------------------------------------------------- #}
+{% block content %}
+  <main class="list-view">
+    <form class="search-form form" action="http://polylog.local/" role="search" method="get" novalidate="">
+      <label class="sr-only" for="search-form-4">Search…</label>
+      <input class="form__input" id="search-form-4" type="search" value="пиар" name="s" spellcheck="false" data-ms-editor="true">
+      <button class="btn" type="submit" aria-label="Search">
+        <svg class="icon" width="24" height="24" viewbox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="var(--icon-stroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+      </button>
+    </form>
+
+    <h1 class="h2 mt-1 is-centered-text">Ничего не найдено</h1>
+    <p class="is-centered-text mb-1">По вашему запросу ничего не найдено. Попробуйте переформулировать.</p>
+
+    <figure class="border">
+      <video preload="metadata" autoplay muted playsinline loop width="1280" height="544">
+        <source src="/wp-content/themes/polylog/media/video/pirates-of-the-caribbean.mp4" type="video/mp4">
+      </video>
+    </figure>
+  </main>
+{% endblock %}

@@ -1,0 +1,103 @@
+
+.history-award--mobile .history-award__item {
+  @include media-breakpoint-down(sm) {
+    margin: 0 15px 30px;
+    width: 40%;
+  }
+}
+
+.award__item-1 .award__item-span:nth-of-type(1) {
+  animation-duration: $duration-king-size;
+}
+
+.award__item-1 .award__item-span:nth-of-type(2) {
+  animation-duration: $duration-king-size;
+}
+
+.award__item-2 .award__item-span:nth-of-type(1) {
+  animation-duration: 11s;
+}
+
+.award__item-2 .award__item-span:nth-of-type(2) {
+  animation-duration: 11s;
+}
+
+.award__item-3 .award__item-span:nth-of-type(1) {
+  animation-duration: 14s;
+}
+
+.award__item-3 .award__item-span:nth-of-type(2) {
+  animation-duration: 14s;
+}
+
+.award__item-4 .award__item-span:nth-of-type(1) {
+  animation-duration: $duration-huge;
+}
+
+.award__item-4 .award__item-span:nth-of-type(2) {
+  animation-duration: $duration-huge;
+}
+
+.award__item-5 .award__item-span:nth-of-type(1) {
+  animation-duration: 7.2s;
+}
+
+.award__item-5 .award__item-span:nth-of-type(2) {
+  animation-duration: 7.2s;
+}
+
+.award__item-6 .award__item-span:nth-of-type(1) {
+  animation-duration: 12.5s;
+}
+
+.award__item-6 .award__item-span:nth-of-type(2) {
+  animation-duration: 12.5s;
+}
+
+.award__item-7 .award__item-span:nth-of-type(1) {
+  animation-duration: 6.6s;
+}
+
+.award__item-7 .award__item-span:nth-of-type(2) {
+  animation-duration: 6.6s;
+}
+
+.award__item-8 .award__item-span:nth-of-type(1) {
+  animation-duration: 9.8s;
+}
+
+.award__item-8 .award__item-span:nth-of-type(2) {
+  animation-duration: 9.8s;
+}
+
+.award__item-9 .award__item-span:nth-of-type(1) {
+  animation-duration: 9s;
+}
+
+.award__item-9 .award__item-span:nth-of-type(2) {
+  animation-duration: 9s;
+}
+
+.award__item-10 .award__item-span:nth-of-type(1) {
+  animation-duration: 10s;
+}
+
+.award__item-10 .award__item-span:nth-of-type(2) {
+  animation-duration: 10s;
+}
+
+.award__item-11 .award__item-span:nth-of-type(1) {
+  animation-duration: 13s;
+}
+
+.award__item-11 .award__item-span:nth-of-type(2) {
+  animation-duration: 13s;
+}
+
+.award__item-12 .award__item-span:nth-of-type(1) {
+  animation-duration: 7.5s;
+}
+
+.award__item-12 .award__item-span:nth-of-type(2) {
+  animation-duration: 7.5s;
+}

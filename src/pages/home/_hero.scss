@@ -1,0 +1,331 @@
+.main-screen {
+  padding-top: $size-3;
+}
+
+.main-screen__main {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.main-screen__credits {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  z-index: -1;
+}
+
+.main-screen__credits-row {
+  position: relative;
+  white-space: nowrap;
+}
+
+.main-screen__credits-row:nth-of-type(2) .main-screen__credits-item:nth-of-type(2) {
+  position: absolute;
+  top: 0;
+  right: 100%;
+}
+
+.main-screen__credits-item {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: $color-ink-inverse-normal;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, .3);
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.main-screen__credits-item .black {
+  color: $color-ink-title;
+  -webkit-text-stroke: none;
+}
+
+.hero__figure,
+.main-screen__image-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero__figure > div {
+  position: relative;
+  width: 140px;
+  height: 234px;
+  margin-bottom: $size-3;
+
+  @include media-breakpoint-up(lg) {
+    margin-bottom: $size-line;
+    width: 200px;
+    height: 335px;
+  }
+
+  @include media-breakpoint-up(xl) {
+    margin-bottom: 28px;
+    width: 249px;
+    height: 417px;
+  }
+}
+
+.hero__pic {
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: opacity 2s $easing-base;
+  }
+
+  &:nth-of-type(1) img {
+    animation-name: fade;
+    animation-timing-function: $easing-base;
+    animation-iteration-count: infinite;
+    animation-duration: $duration-king-size;
+    animation-direction: alternate;
+  }
+
+  &:nth-of-type(2) img {
+    animation-name: fade;
+    animation-timing-function: $easing-base;
+    animation-iteration-count: infinite;
+    animation-duration: $duration-king-size;
+    animation-direction: alternate-reverse;
+  }
+}
+
+.hero__figcaption {
+  font-weight: bold;
+  font-size: var(--font-size-big);
+  line-height: 1.1;
+  text-align: center;
+  margin-bottom: $size-line;
+  min-height: 60px;
+
+
+  span {
+    display: block;
+  }
+}
+
+.main-screen__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-screen__languages-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  margin-left: 5%;
+}
+
+.main-screen__languages-item {
+  margin-right: $size-2;
+}
+
+.main-screen__languages-item:last-of-type {
+  margin-right: 0;
+}
+
+.main-screen__languages-link {
+  display: block;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-big);
+  line-height: 1.1;
+  color: $color-ink-title;
+  text-decoration: none;
+  transition: all $duration-xxs;
+}
+
+.main-screen__languages-link:hover,
+.main-screen__languages-link:focus {
+  color: $color-primary;
+}
+
+.main-screen__languages-link.current {
+  color: $color-ink-2ry;
+}
+
+.main-screen__tel {
+  display: none;
+}
+
+.main-screen__contacts {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: var(--font-size-big);
+  line-height: 1.1;
+  color: $color-ink-title;
+  text-decoration: none;
+  transition: all $duration-xxs;
+}
+
+.main-screen__contacts svg {
+  display: block;
+  flex-shrink: 0;
+  width: $size-line;
+  height: auto;
+  margin-right: $size-1;
+}
+
+.main-screen__contacts svg path {
+  fill: $color-primary;
+}
+
+.main-screen__contacts:hover,
+.main-screen__contacts:focus {
+  color: $color-primary;
+}
+
+.main-screen__contacts:hover svg,
+.main-screen__contacts:focus svg {
+  animation-name: bounce;
+  animation-duration: $duration-md;
+  animation-timing-function: $easing-base;
+}
+
+.main-screen__request {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: $size-3;
+  padding: $size-line 5%;
+}
+
+.main-screen__request svg {
+  flex-shrink: 0;
+  width: $size-4;
+  height: auto;
+  margin-left: $size-2;
+}
+
+.main-screen__request:hover,
+.main-screen__request:focus {
+  color: $color-ink-title;
+}
+
+.main-screen__request:hover svg,
+.main-screen__request:focus svg {
+  animation-name: arrow;
+  animation-duration: $duration-md;
+  animation-timing-function: $easing-base;
+}
+
+.main-screen__request:hover svg path,
+.main-screen__request:focus svg path {
+  fill: $color-ink-title;
+}
+
+@include media-breakpoint-up(lg) {
+  .main-screen {
+    padding: 0;
+  }
+
+  .main-screen__main {
+    margin-bottom: 10px;
+  }
+
+  .main-screen__credits-item {
+    font-size: 72px;
+  }
+
+  .main-screen__nav {
+    flex-wrap: nowrap;
+    padding-left: calc((100% - 960px) / 2);
+  }
+
+  .main-screen__languages-list {
+    margin-left: 0;
+  }
+
+  .main-screen__languages-item {
+    margin-right: $size-3;
+  }
+
+  .main-screen__languages-link {
+    font-size: $size-3;
+  }
+
+  .main-screen__tel {
+    display: block;
+    margin: 0 auto;
+    font-family: var(--font-family-title);
+    font-weight: 800;
+    font-size: $size-3;
+    line-height: 1.1;
+    color: $color-ink-title;
+    text-decoration: none;
+    transition: all $duration-xxs;
+  }
+
+  .main-screen__tel:hover,
+  .main-screen__tel:focus {
+    color: $color-primary;
+  }
+
+  .main-screen__contacts {
+    margin-right: 40px;
+    font-size: $size-3;
+  }
+
+  .main-screen__request {
+    width: calc(320px + (100vw - 960px) / 2);
+    margin-top: 0;
+    padding: $size-4;
+    padding-right: calc((100vw - 960px) / 2);
+  }
+
+  .main-screen__request svg {
+    width: 36px;
+    margin-left: 60px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .main-screen {
+    padding: 0;
+  }
+
+  .main-screen__credits-item {
+    font-size: 84px;
+  }
+
+  .main-screen__nav {
+    padding-left: calc((100% - 1240px) / 2);
+  }
+
+  .main-screen__languages-item {
+    margin-right: $size-line;
+  }
+
+  .main-screen__contacts {
+    margin-right: 80px;
+  }
+
+  .main-screen__request {
+    width: calc(360px + (100vw - 1240px) / 2);
+    padding: 40px;
+    padding-right: calc((100vw - 1240px) / 2);
+  }
+}

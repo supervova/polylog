@@ -1,0 +1,42 @@
+.social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.social__item {
+  flex-shrink: 0;
+  width: $size-4;
+  height: $size-4;
+  margin-right: $size-1;
+}
+
+.social__item:last-of-type {
+  margin-right: 0;
+}
+
+.social__link {
+  display: block;
+  transition: all $duration-xxs;
+}
+
+.social__link svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.social__link svg path {
+  transition: all $duration-xxs;
+}
+
+.social__link:hover,
+.social__link:focus {
+  transform: scale(1.2);
+}
+
+.social__link:hover svg path,
+.social__link:focus svg path {
+  stroke: $color-primary;
+}

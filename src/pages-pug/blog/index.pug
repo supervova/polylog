@@ -1,0 +1,126 @@
+extends /pages-pug/base/base.pug
+include /pages-pug/base/mixins
+
+//- FRONT MATTER ---------------------------------------------------------------
+
+append config
+  -
+    var page = {
+      lang: 'ru',
+      title: 'Тестовая стр',
+      description: site.description,
+      bodyClasses: 'page is-blog'
+    }
+
+//- CONTENT --------------------------------------------------------------------
+
+block content
+
+  main.main
+    .container
+      h1.is-centered-text Блог: пиар и маркетинг
+
+      mixin gridItem(title, desc, thumbnail, tag, url='#', tagUrl='#', datetime='2023-03-06T11:00:42+03:00', date='06.03.2023')
+        article.grid-view__item
+          a.border(href=url aria-hidden='true' tabindex='-1')
+            img.attachment-thumbnail.size-thumbnail.wp-post-image(src=thumbnail alt=title width='288' height='150' decoding='async')
+          a.grid-view__wrapper-link(href=url rel='bookmark')
+            .grid-view__body
+              h2.grid-view__item-title= title
+              p= desc
+          footer.grid-view__meta
+            time.article__date(datetime= datetime)= date
+            |
+            a.tag.is-bottom(href=tagUrl rel='tag')= tag
+
+      .grid-view
+        +gridItem(
+          'Как использовать нейросеть Midjourney в public relations',
+          'Midjourney — нейронная сеть, генерирующая изображения по текстовым описаниям. Абсолютная фантастика, если честно. И жестокий удар для миллионов коммерческих художников. После такого на ногах…',
+          'https://polylog.ru/wp-content/uploads/2023/03/discord-midjourney-288x150.png',
+          'PR'
+        )
+
+        +gridItem(
+          'Как использовать ChatGPT в public relations?',
+          'ChatGPT — чат-бот с искусственным интеллектом, разработанный американской компанией OpenAI, одним из основателей которой является Илон Маск. За полгода с момента релиза эта штука…',
+          'https://polylog.ru/wp-content/uploads/2023/03/01-288x150.png',
+          'PR'
+        )
+
+        +gridItem(
+          'Как подготовить отчет о работе в социальных сетях?',
+          'Умный и простой для понимания отчет в социальных сетях является ключом к доказательству правильности выбранной стратегии. Он показывает, чего вы достигли, подкрепляя данными. Создание отчета…',
+          'https://polylog.ru/wp-content/uploads/2022/07/Cjwb-ctnb-288x150.png',
+          'Интернет-маркетинг'
+        )
+
+        +gridItem(
+          'КАК БРЕНДУ ВЫЖИТЬ БЕЗ INSTAGRAM* И FACEBOOK**',
+          'Шесть действенных в кризис инструментов для продвижения брендов по мнению консалтингового агентства «Полилог» Из-за усложнившейся экономической ситуации многие компании задумались, как поддержать свой бизнес…',
+          'https://polylog.ru/wp-content/uploads/2022/03/Soc-seti-288x150.jpg',
+          'Интернет-маркетинг'
+        )
+
+        +gridItem(
+          'Гайд по коммуникации с журналистами',
+          'Как  общаться с журналистами, чтобы ваши статьи публиковали в СМИ? С чего начать, как понять интересен ли материал, и что именно отправлять журналисту? Читайте…',
+          'https://polylog.ru/wp-content/uploads/2022/03/GAJJD-2-1-288x150.jpg',
+          'PR'
+        )
+
+        +gridItem(
+          'Event-обзор EXPO 2020',
+          '«EXPO 2020» – масштабное мировое шоу. Выставка, собравшая 192 страны на одной площадке – в Дубае. Самое значимое и ожидаемое событие event-индустрии не прошло…',
+          'https://polylog.ru/wp-content/uploads/2022/02/ROSSIYA-EHKSPO-288x150.jpg',
+          'Event'
+        )
+
+        +gridItem(
+          'Стратегия продвижения в социальных сетях',
+          'К 2025 году эксперты ожидают, что 4,41 миллиарда человек во всем мире будут использовать одну из платформ социальных сетей. Если вы хотите повысить лояльность к своему…',
+          'https://polylog.ru/wp-content/uploads/2022/01/facebook_1-288x150.png',
+          'PR'
+        )
+
+        +gridItem(
+          'Рекламная кампания фильма «Человек-паук: нет пути домой»',
+          'Новый фильм киновселенной Marvel стал самым ожидаемым в 2021 году. Поклонники строили догадки, теории, ждали трейлеров, постеров, подтверждения слухов и спойлеров, окруживших киноленту. Утечка…',
+          'https://polylog.ru/wp-content/uploads/2022/01/200-2-288x150.png',
+          'Реклама'
+        )
+
+        +gridItem(
+          'Зимняя магия от Coca Cola',
+          'Уже 100 лет компания Coca‑Cola делится новогодним волшебством в своих рекламных кампаниях. Добрый Санта, белые медведи и узнаваемый по всему миру караван красных грузовиков.…',
+          'https://polylog.ru/wp-content/uploads/2021/12/7-288x150.jpg',
+          'Реклама'
+        )
+
+        +gridItem(
+          'Успешный кейс Dunkin’ Donuts в TikTok',
+          'Мы продолжаем серию наших материалов о рекламе на популярной площадке TikTok и сегодня разбираем кейс Dunkin’ Donuts. Этот бренд всегда успешен, будь то создание…',
+          'https://polylog.ru/wp-content/uploads/2021/12/dankin-1-288x150.jpg',
+          'Реклама'
+        )
+
+        +gridItem(
+          'TikTok – новая рекламная площадка',
+          'Сегодня TikTok стал самой популярной площадкой среди молодежи, и многие бренды уже используют её для увеличения своих продаж. Думаете использовать TikTok для продвижения? Нужны…',
+          'https://polylog.ru/wp-content/uploads/2021/12/tiktok-growth-marketer-response-strategy-research-1600-288x150.png',
+          'Реклама'
+        )
+
+        +gridItem(
+          'Маркетинг B2B и B2C: есть ли разница?',
+          'Довольно часто в резюме встречается такое требование, как знание стратегий B2B и B2C. Начинающим специалистам не до конца понятно, чего же хочет работодатель, и…',
+          'https://polylog.ru/wp-content/uploads/2021/11/B2B-vs-B2C-e-commerce-1536x1024-1-288x150.png',
+          'Маркетинг'
+        )
+
+      nav.navigation.posts-navigation(aria-label='Постраничная навигация')
+          h2.sr-only Постраничная навигация
+          .nav-links
+            .nav-previous
+              a(href='https://polylog.ru/pr-blog/page/2') Ранее
+

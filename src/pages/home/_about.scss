@@ -1,0 +1,323 @@
+.about--foreign {
+  padding-bottom: 40px;
+}
+
+.about-teaser {
+  background-color: $color-background-inverse;
+}
+
+.about-teaser__main {
+  position: relative;
+  padding: 40px 0;
+}
+
+.about-teaser__text {
+  font-weight: bold;
+  font-size: $size-3;
+  line-height: 1.4;
+  color: $color-ink-inverse-normal;
+}
+
+.about-teaser__text p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $size-2;
+}
+
+.about-teaser__text p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about-teaser__additional {
+  display: none;
+}
+
+.about-teaser__images-wrapper {
+  padding-bottom: $size-3;
+}
+
+.about-teaser__images {
+  position: relative;
+  width: 134px;
+  margin: 0 auto;
+}
+
+.about-teaser__image-bust {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.about-teaser__image-shape {
+  position: absolute;
+  top: 0;
+  left: -38px;
+  bottom: 0;
+  display: block;
+  width: 76px;
+  height: 76px;
+  margin: auto;
+  transform: rotate(-30deg);
+}
+
+.about-teaser__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: $size-line 5%;
+  color: $color-ink-title;
+  text-align: left;
+  background-color: $color-background-base;
+}
+
+.about-teaser__button svg {
+  flex-shrink: 0;
+  width: $size-4;
+  height: auto;
+  margin-left: $size-2;
+}
+
+.about-teaser__button svg path {
+  fill: $color-ink-title;
+}
+
+.about-teaser__button:hover,
+.about-teaser__button:focus {
+  color: $color-primary;
+}
+
+.about-teaser__button:hover svg,
+.about-teaser__button:focus svg {
+  animation-name: arrow;
+  animation-duration: $duration-md;
+  animation-timing-function: $easing-base;
+}
+
+.about-teaser__button:hover svg path,
+.about-teaser__button:focus svg path {
+  fill: $color-primary;
+}
+
+.about-scope {
+  position: relative;
+  padding: 40px 0;
+  padding-bottom: 100px;
+  color: $color-ink-inverse-normal;
+  background-image: url('/wp-content/themes/polylog/img/init/backgrounds/bg_about-scope.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+@media #{$mq-retina} {
+  .about-scope {
+    background-image: url('/wp-content/themes/polylog/img/init/backgrounds/bg_about-scope@2x.jpg');
+  }
+}
+
+.about-scope__container {
+  position: relative;
+}
+
+.about-scope__title {
+  margin: 0;
+  padding: 0;
+  margin-bottom: $size-line;
+  font-family: var(--font-family-title);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.about__small-image {
+  display: block;
+  width: 228px;
+  margin-left: auto;
+  transform: translateY(-50%);
+}
+
+@include media-breakpoint-up(lg) {
+  .about {
+    padding-bottom: 0;
+  }
+
+  .about--foreign {
+    padding-bottom: 80px;
+  }
+
+  .about-teaser__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 120px 0;
+  }
+
+  .about-teaser__text {
+    width: 600px;
+    font-size: $size-line;
+  }
+
+  .about-teaser__additional {
+    display: block;
+    width: 320px;
+    color: $color-ink-inverse-normal;
+  }
+
+  .about-teaser__figure {
+    margin-bottom: 40px;
+  }
+
+  .about-teaser__figure-value {
+    font-family: var(--font-family-title);
+    font-weight: 800;
+    font-size: 76px;
+    line-height: 1.1;
+  }
+
+  .about-teaser__figure-caption {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  .about-teaser__additional-text {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+  }
+
+  .about-teaser__additional-text p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: $size-2;
+  }
+
+  .about-teaser__additional-text p:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .about-teaser__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .about-teaser__images-wrapper {
+    position: relative;
+    width: 600px;
+    padding-bottom: 0;
+    margin-left: calc((100vw - 960px) / 2);
+  }
+
+  .about-teaser__images {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+    width: 160px;
+    margin: auto;
+    z-index: 1;
+  }
+
+  .about-teaser__image-shape {
+    left: -60px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-teaser__button {
+    width: calc(320px + (100vw - 960px) / 2);
+    padding: $size-4;
+    padding-right: calc((100vw - 960px) / 2);
+  }
+
+  .about-teaser__button svg {
+    width: 36px;
+  }
+
+  .about-scope {
+    padding: 120px 0;
+    padding-top: 200px;
+  }
+
+  .about-scope__container {
+    padding-left: 332px;
+  }
+
+  .about-scope__title {
+    margin-bottom: 40px;
+    font-size: 72px;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .about--foreign {
+    padding-bottom: 100px;
+  }
+
+  .about-teaser__main {
+    padding: 160px 0;
+  }
+
+  .about-teaser__text {
+    width: 800px;
+    font-size: $size-4;
+  }
+
+  .about-teaser__additional {
+    width: 360px;
+  }
+
+  .about-teaser__figure {
+    margin-bottom: 60px;
+  }
+
+  .about-teaser__figure-value {
+    font-size: 84px;
+  }
+
+  .about-teaser__figure-caption {
+    font-size: var(--font-size-big);
+  }
+
+  .about-teaser__additional-text {
+    font-size: var(--font-size-big);
+  }
+
+  .about-teaser__images-wrapper {
+    width: 800px;
+    margin-left: calc((100vw - 1240px) / 2);
+  }
+
+  .about-teaser__images {
+    top: -144px;
+    width: 228px;
+  }
+
+  .about-teaser__image-shape {
+    left: -68px;
+    width: 136px;
+    height: 136px;
+  }
+
+  .about-teaser__button {
+    width: calc(360px + (100vw - 1240px) / 2);
+    padding: 40px;
+    padding-right: calc((100vw - 1240px) / 2);
+  }
+
+  .about-scope {
+    padding: 160px 0;
+    padding-top: 280px;
+  }
+
+  .about-scope__container {
+    padding-left: 427px;
+  }
+
+  .about-scope__title {
+    margin-bottom: 64px;
+    font-size: 84px;
+  }
+}

@@ -1,0 +1,142 @@
+{% block config %}
+
+{#
+Timber / WP vars
+{{ site.language_attributes }}
+{{ site.name }}
+{{ site.description }}
+{{ site.url }}
+{{ site.theme.link }}
+
+{{ post.title }}
+{{ post.link }}
+{{ post.tags }}
+{{ post.content }}
+{{ post.thumbnail.src }}
+#}
+
+{#
+In the Timber theme, variables are added to functions.php as a one-dimensional
+array, so here the array is also one-dimensional. Excluding WordPress core
+variables
+TODO: Попробовать записывать переменные в functions.php как
+$context['site'] = $this;
+$context['site']['icons']['apple_touch'] = '/base/graphics/icon.png';
+
+#}
+{% set site = {
+  language_attributes: "ru",
+  name: {
+    en: "Polylog — PR & Event Agency",
+  },
+  description: "Комплексное пиар-сопровождение. Организация мероприятий, event-менеджмент. IT и научные исследования для органов власти. Создаем интерес и уважение.",
+  url: "https://www.polylog.ru",
+  theme: {
+    link: "/wp-content/themes/polylog/"
+  },
+
+  languages: {
+    en: "en",
+  },
+  short_name: "",
+  slag: "polylog",
+  assets: "/wp-content/themes/polylog",
+  logo: "",
+  image: "",
+  icons: {
+    apple_touch: "/base/graphics/icon.png",
+    svg: "/base/graphics/icon.svg",
+  },
+  colors: {
+    primary: "#fc0",
+    browser: "#fc0",
+  },
+
+  street: "",
+  postal_code: "",
+  country: "",
+  locality: "город",
+  region: "область, община",
+  phone: "+382 69 184524 (в tel-ссылках писать {{ site.phone|replace({' ': ''}) }})",
+  email: "",
+  area_served: "RU",
+  opening_hours: "Mo, Tu, We, Th, Fr 09:00-17:00",
+  price_range: "$100 - $300",
+  latitude: "",
+  longitude: "",
+  map: "https://google-or-yandex-map-link",
+
+  fonts: {
+    google: "Inter:wght@300;400;600",
+    local: [
+      "Gilroy-ExtraBold",
+      "Gilroy-Light"
+    ]
+  },
+  rss: "",
+  rss_title: "",
+  gtm: false,
+  facebook_admins: "",
+  facebook_app_id: "",
+  facebook_cta_like: false,
+  vk_api: "",
+  apple_app_id: "",
+
+  author: {
+    summary: "Vladimir Nikishin, www.super-mark.ru",
+    twitter: "@supervova",
+  },
+} %}
+{% endblock %}
+
+<!DOCTYPE html>
+<html lang="{{ site.language_attributes }}" prefix="og: http://ogp.me/ns#">
+<head>
+
+  {% block html_head %}
+    {% include "/pages/base/head.twig" %}
+  {% endblock %}
+</head>
+
+<body{% if post.body_classes %} class="{{ post.body_classes }}"{% endif %}>
+
+  {# Google Tag Manager (noscript) #}
+  {# <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ site_details.google_tag_manager }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> #}
+
+
+  {# HEADER ----------------------------------------------------------------- #}
+  {% block header %}
+    {% include "components/header/header.twig" %}
+  {% endblock %}
+
+  {# CONTENT ---------------------------------------------------------------- #}
+
+
+
+  {% if post.is_blank %}
+    {% block content %}
+    {% endblock %}
+  {% else %}
+    <main class="main main-inner">
+      <div>
+        <div class="container">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </main>
+  {% endif %}
+
+
+  {# FOOTER ----------------------------------------------------------------- #}
+  {% block footer %}
+    {% include "components/footer/footer.twig" %}
+  {% endblock %}
+
+  {# SCRIPTS, MODALS -------------------------------------------------------- #}
+  {% block body_suffix %}
+    {% include "pages/base/body-suffix.twig" %}
+  {% endblock %}
+</body>
+</html>

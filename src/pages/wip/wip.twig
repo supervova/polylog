@@ -1,0 +1,159 @@
+
+{% extends "/pages/base/base.twig" %}
+
+{% block config %}
+{{ parent() }}
+
+{% set post = {
+  lang: "ru",
+  title: "",
+  description: site.description,
+  image: site.logo,
+  link: site.url,
+  is_blank: true,
+  body_classes: "search search-results"
+} %}
+
+{% set ExtraData = {
+    title: "Тестовая страница",
+    is_dev: true,
+    domain: 'xyz'
+} %}
+{% endblock %}
+
+{% block html_head %}
+  {{ parent() }}
+
+  <style>
+  .header {
+    display: none;
+  }
+  .footer {
+    display: none;
+  }
+  </style>
+{% endblock %}
+
+{# MAIN CONTENT ------------------------------------------------------------- #}
+{% block content %}
+  <main class="main main-index">
+    <h1>Биг бада-бум!</h1>
+  </main>
+  <div id="header">
+    <div class="logo"></div>
+  </div>
+  <div id="header-sign-up"></div>
+  <div id="header-sign-in"></div>
+  <ul id="header-menu-container"><li></li></ul>
+  <div id="header-menu-primary"></div>
+  <div class="menu">
+    <div class="menu__item"></div>
+  </div>
+  <ul id="header-more-popover"><li></li></ul>
+  <div id="header-menu-user"></div>
+
+  <div class="header__user dropdown"></div>
+  <div class="dropdown"></div>
+  <div class="dropdown__toggle"></div>
+
+
+  <script>
+  /* eslint-disable no-unused-vars */
+  (() => {
+    if (Number({{ UserId }}) === 0) {
+      document.getElementById('header-sign-up').classList.add('is-on');
+      document.getElementById('header-sign-in').classList.add('is-on');
+    } else {
+      document.querySelector('.header__user.dropdown').classList.add('is-on');
+    }
+  })();
+
+  (() => {
+    // Get primary menu key nodes
+    const container = document.getElementById('header-menu-container');
+    const primary = document.getElementById('header-menu-primary');
+    const primaryItems = container.querySelectorAll('.menu > .menu__item');
+
+    // Insert "more" button and duplicate the list
+    const moreLabel = '{{ "More" }}';
+    const project = '{{ ExtraData.domain }}';
+
+    primary.insertAdjacentHTML(
+      'beforeend',
+      `
+      <li class="menu__item dropdown is-more">
+        <button class="dropdown__toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <svg class="icon is-p2p" aria-hidden="true" focusable="false">
+            <use href="/projects/${project}/images/base/graphics/sprite.svg#icon-more"></use>
+          </svg>
+          <span class="label">${moreLabel}</span>
+        </button>
+        <ul class="dropdown-menu" id="header-more-popover">
+          ${primary.innerHTML}
+        </ul>
+      </li>
+      `
+    );
+
+    // Get popover items and total
+    const secondary = document.getElementById('header-more-popover');
+    const secondaryItems = secondary.querySelectorAll('li');
+    const allItems = container.querySelectorAll('li');
+    const moreLi = primary.querySelector('.dropdown');
+    const moreBtn = moreLi.querySelector('.dropdown__toggle');
+
+    // Adapt links
+    const doAdapt = () => {
+      if (
+        window.matchMedia(
+          '(min-width: 768px) and (min-height: 414px), (min-width: 916px)'
+        ).matches
+      ) {
+        // reveal all items for the calculation
+        allItems.forEach((item) => {
+          item.classList.remove('is-hidden');
+        });
+
+        // Hide items that won't fit in the Primary
+        let stopWidth = moreBtn.offsetWidth;
+        const hiddenItems = [];
+        const availableSpace =
+          document.body.offsetWidth -
+          document.querySelector('#header > .logo').offsetWidth -
+          document.getElementById('header-menu-user').offsetWidth -
+          80;
+
+        primaryItems.forEach((item, i) => {
+          if (availableSpace >= stopWidth + item.offsetWidth) {
+            stopWidth += item.offsetWidth;
+          } else {
+            item.classList.add('is-hidden');
+            hiddenItems.push(i);
+          }
+        });
+
+        // Toggle the visibility of More button and items in popover
+        if (!hiddenItems.length) {
+          moreLi.classList.add('is-hidden');
+        } else {
+          secondaryItems.forEach((item, i) => {
+            if (!hiddenItems.includes(i)) {
+              item.classList.add('is-hidden');
+            }
+          });
+        }
+      } else {
+        primaryItems.forEach((item) => {
+          item.classList.remove('is-hidden');
+        });
+      }
+    };
+
+    // Adapt immediately on load and on window resize
+    doAdapt();
+    window.addEventListener('resize', doAdapt);
+  })();
+  </script>
+{% endblock %}
+
+

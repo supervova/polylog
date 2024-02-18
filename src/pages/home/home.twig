@@ -1,0 +1,910 @@
+
+{% extends "/pages/base/base.twig" %}
+
+{% block config %}
+{{ parent() }}
+
+{% set post = {
+  lang: "ru",
+  title: "",
+  description: site.description,
+  image: site.logo,
+  link: site.url,
+  body_classes: "home page-template-default page page-id-2 logged-in"
+} %}
+{% endblock %}
+
+{% block html_head %}
+  {{ parent() }}
+
+  {# <style>
+  </style> #}
+{% endblock %}
+
+{# MAIN CONTENT ------------------------------------------------------------- #}
+{% block content %}
+  <main class="main main-index">
+    <h1 class="sr-only">Консалтинговая группа «Полилог»</h1>
+    <section class="main-screen">
+      <div class="main-screen__main">
+        <div class="main-screen__credits">
+          <div class="main-screen__credits-row marquee-item" data-marque-speed="50">
+            <h2 class="main-screen__credits-item marquee-itemchild" style="transform: translateX(-10554.9px);">
+              <span class="black">Спонсоры</span>
+              <span>20 лет экспертизы и масштабных событий</span>
+              <span class="black">Перспектива</span>
+              <span>1000 успешных кейсов</span>
+              <span class="black">Развитие</span>
+              <span>Глобальный контекст</span>
+              <span class="black">Интеграция</span>
+              <span>Стратегии будущего</span>
+              <span class="black">Агентство</span>
+              <span>Мероприятия</span>
+              <span class="black">События</span>
+              <span>GR</span>
+              <span class="black">Консалтинг</span>
+              <span>Продвижение</span>
+              <span class="black">Креатив</span>
+              <span>Результат</span>
+              <span class="black">Качество</span>
+              <span>Цифровые решения</span>
+              <span class="black">Digital</span>
+              <span>SMM</span>
+              <span class="black">PR</span>
+              <span>Госсектор</span>
+            </h2>
+            <h2 class="main-screen__credits-item marquee-itemchild" style="transform: translateX(-10554.9px);">
+              <span class="black">Спонсоры</span>
+              <span>20 лет экспертизы и масштабных событий</span>
+              <span class="black">Перспектива</span>
+              <span>1000 успешных кейсов</span>
+              <span class="black">Развитие</span>
+              <span>Глобальный контекст</span>
+              <span class="black">Интеграция</span>
+              <span>Стратегии будущего</span>
+              <span class="black">Агентство</span>
+              <span>Мероприятия</span>
+              <span class="black">События</span>
+              <span>GR</span>
+              <span class="black">Консалтинг</span>
+              <span>Продвижение</span>
+              <span class="black">Креатив</span>
+              <span>Результат</span>
+              <span class="black">Качество</span>
+              <span>Цифровые решения</span>
+              <span class="black">Digital</span>
+              <span>SMM</span>
+              <span class="black">PR</span>
+              <span>Госсектор</span>
+            </h2>
+          </div>
+          <div class="main-screen__credits-row marquee-item-rev" data-marque-speed="80">
+            <h2 class="main-screen__credits-item marquee-itemchild" style="transform: translateX(3871.79px);">
+              <span class="black">Спонсоры</span>
+              <span>20 лет экспертизы и масштабных событий</span>
+              <span class="black">Перспектива</span>
+              <span>1000 успешных кейсов</span>
+              <span class="black">Развитие</span>
+              <span>Глобальный контекст</span>
+              <span class="black">Интеграция</span>
+              <span>Стратегии будущего</span>
+              <span class="black">Агентство</span>
+              <span>Мероприятия</span>
+              <span class="black">События</span>
+              <span>GR</span>
+              <span class="black">Консалтинг</span>
+              <span>Продвижение</span>
+              <span class="black">Креатив</span>
+              <span>Результат</span>
+              <span class="black">Качество</span>
+              <span>Цифровые решения</span>
+              <span class="black">Digital</span>
+              <span>SMM</span>
+              <span class="black">PR</span>
+              <span>Госсектор</span>
+            </h2>
+            <h2 class="main-screen__credits-item marquee-itemchild" style="transform: translateX(3871.79px);">
+              <span class="black">Спонсоры</span>
+              <span>20 лет экспертизы и масштабных событий</span>
+              <span class="black">Перспектива</span>
+              <span>1000 успешных кейсов</span>
+              <span class="black">Развитие</span>
+              <span>Глобальный контекст</span>
+              <span class="black">Интеграция</span>
+              <span>Стратегии будущего</span>
+              <span class="black">Агентство</span>
+              <span>Мероприятия</span>
+              <span class="black">События</span>
+              <span>GR</span>
+              <span class="black">Консалтинг</span>
+              <span>Продвижение</span>
+              <span class="black">Креатив</span>
+              <span>Результат</span>
+              <span class="black">Качество</span>
+              <span>Цифровые решения</span>
+              <span class="black">Digital</span>
+              <span>SMM</span>
+              <span class="black">PR</span>
+              <span>Госсектор</span>
+            </h2>
+          </div>
+          <div class="main-screen__credits-row marquee-item" data-marque-speed="60">
+            <h2 class="main-screen__credits-item marquee-itemchild" style="transform: translateX(-8795.78px);">
+              <span class="black">Спонсоры</span>
+              <span>20 лет экспертизы и масштабных событий</span>
+              <span class="black">Перспектива</span>
+              <span>1000 успешных кейсов</span>
+              <span class="black">Развитие</span>
+              <span>Глобальный контекст</span>
+              <span class="black">Интеграция</span>
+              <span>Стратегии будущего</span>
+              <span class="black">Агентство</span>
+              <span>Мероприятия</span>
+              <span class="black">События</span>
+              <span>GR</span>
+              <span class="black">Консалтинг</span>
+              <span>Продвижение</span>
+              <span class="black">Креатив</span>
+              <span>Результат</span>
+              <span class="black">Качество</span>
+              <span>Цифровые решения</span>
+              <span class="black">Digital</span>
+              <span>SMM</span>
+              <span class="black">PR</span>
+              <span>Госсектор</span>
+            </h2>
+            <h2 class="main-screen__credits-item marquee-itemchild" style="transform: translateX(-8795.78px);">
+              <span class="black">Спонсоры</span>
+              <span>20 лет экспертизы и масштабных событий</span>
+              <span class="black">Перспектива</span>
+              <span>1000 успешных кейсов</span>
+              <span class="black">Развитие</span>
+              <span>Глобальный контекст</span>
+              <span class="black">Интеграция</span>
+              <span>Стратегии будущего</span>
+              <span class="black">Агентство</span>
+              <span>Мероприятия</span>
+              <span class="black">События</span>
+              <span>GR</span>
+              <span class="black">Консалтинг</span>
+              <span>Продвижение</span>
+              <span class="black">Креатив</span>
+              <span>Результат</span>
+              <span class="black">Качество</span>
+              <span>Цифровые решения</span>
+              <span class="black">Digital</span>
+              <span>SMM</span>
+              <span class="black">PR</span>
+              <span>Госсектор</span>
+            </h2>
+          </div>
+        </div>
+        <div class="container main-screen__image-wrapper" id="scene">
+          <div class="main-screen__image" data-depth="0.6">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/image_hand-rock@3x.png" width="249" height="417" srcset="https://polylog.ru/wp-content/uploads/2020/09/image_hand-rock@3x.png 2x" alt="Жест 'Коза'"><img src="https://polylog.ru/wp-content/uploads/2020/09/image_hand-peace@3x.png" width="249" height="417" srcset="https://polylog.ru/wp-content/uploads/2020/09/image_hand-peace@3x.png 2x" alt="Жест 'Мир'"></div>
+        </div>
+        <div class="container main-screen__image-text">
+          <span style="opacity: 0; height: 0px;">«Полилог»:
+            <br>создаем имидж и репутацию</span>
+          <span style="opacity: 1; height: auto;">«Полилог»:
+            <br>создаем интерес и уважение</span>
+          <span style="opacity: 0; height: 0px;">Работаем на результат!<br></span>
+        </div>
+      </div>
+      <div class="consulting anim-item anim-item--no-hide active">
+        <div class="consulting__title anim-bottom">
+          <svg width="1383" height="168" viewbox="0 0 1383 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M84.6199 167.44C114.06 167.44 139.82 152.95 153.62 130.18L121.88 111.78C114.98 124.2 100.95 131.56 84.6199 131.56C56.0999 131.56 37.6999 112.47 37.6999 83.72C37.6999 54.97 56.0999 35.88 84.6199 35.88C100.95 35.88 114.75 43.24 121.88 55.66L153.62 37.26C139.59 14.49 113.83 0 84.6199 0C36.0899 0 0.899902 36.34 0.899902 83.72C0.899902 131.1 36.0899 167.44 84.6199 167.44Z" fill="black"></path>
+            <path d="M245.44 167.44C291.67 167.44 329.16 131.1 329.16 83.72C329.16 36.34 291.67 0 245.44 0C199.21 0 161.72 36.34 161.72 83.72C161.72 131.1 199.21 167.44 245.44 167.44ZM245.44 131.56C219.22 131.56 198.52 112.47 198.52 83.72C198.52 54.97 219.22 35.88 245.44 35.88C271.66 35.88 292.36 54.97 292.36 83.72C292.36 112.47 271.66 131.56 245.44 131.56Z" fill="black"></path>
+            <path d="M439.58 3.22V90.62L377.48 3.22H349.88V164.22H386.68V76.82L448.78 164.22H476.38V3.22H439.58Z" fill="black"></path>
+            <path d="M558.066 167.44C593.026 167.44 617.866 149.04 617.866 117.99C617.866 83.95 590.496 75.44 566.116 68.08C541.046 60.49 537.136 55.43 537.136 48.07C537.136 41.63 542.886 35.88 554.386 35.88C569.106 35.88 576.696 43.01 582.216 54.51L613.266 36.34C601.536 12.65 580.836 0 554.386 0C526.556 0 500.336 17.94 500.336 48.99C500.336 79.81 523.796 91.31 547.716 97.98C571.866 104.65 581.066 108.56 581.066 118.45C581.066 124.66 576.696 131.56 559.216 131.56C541.046 131.56 531.156 122.59 525.406 109.25L493.666 127.65C502.636 151.34 524.256 167.44 558.066 167.44Z" fill="black"></path>
+            <path d="M697.207 167.44C732.627 167.44 759.307 146.74 759.307 112.24V3.22H722.507V109.02C722.507 121.21 716.757 131.56 697.207 131.56C677.657 131.56 671.907 121.21 671.907 109.02V3.22H635.107V112.24C635.107 146.74 661.787 167.44 697.207 167.44Z" fill="black"></path>
+            <path d="M822.647 128.8V3.22H785.847V164.22H880.147V128.8H822.647Z" fill="black"></path>
+            <path d="M988.283 3.22H868.683V38.64H910.083V164.22H946.883V38.64H988.283V3.22Z" fill="black"></path>
+            <path d="M1004.39 3.22V164.22H1041.19V3.22H1004.39Z" fill="black"></path>
+            <path d="M1158.55 3.22V90.62L1096.45 3.22H1068.85V164.22H1105.65V76.82L1167.75 164.22H1195.35V3.22H1158.55Z" fill="black"></path>
+            <path d="M1382.33 74.52H1301.6V106.72H1344.61C1338.86 122.13 1324.83 131.56 1303.44 131.56C1272.16 131.56 1252.84 111.55 1252.84 84.18C1252.84 55.89 1273.08 35.88 1300.22 35.88C1318.39 35.88 1332.88 44.16 1339.55 54.74L1370.83 36.8C1357.26 15.18 1331.27 0 1300.45 0C1253.07 0 1216.04 37.26 1216.04 83.95C1216.04 130.18 1252.38 167.44 1302.98 167.44C1348.06 167.44 1382.33 137.54 1382.33 88.32V74.52Z" fill="black"></path>
+            <path d="M1319.93 85.1653C1321.27 85.1653 1322.61 85.4648 1323.93 86.0637V87.9934C1322.61 87.3215 1321.3 86.9856 1320.02 86.9856C1319.23 86.9856 1318.52 87.1444 1317.9 87.4622C1317.28 87.7799 1316.8 88.2382 1316.45 88.8372C1316.11 89.4309 1315.95 90.095 1315.95 90.8293C1315.95 91.9439 1316.32 92.8424 1317.05 93.5247C1317.8 94.2017 1318.78 94.5403 1319.99 94.5403C1320.33 94.5403 1320.64 94.5116 1320.95 94.4543C1321.25 94.3971 1321.62 94.2877 1322.04 94.1262V92.3137H1320.23V90.6653H1324.15V95.1653C1323.61 95.5403 1322.97 95.8346 1322.21 96.0481C1321.46 96.2564 1320.68 96.3606 1319.87 96.3606C1318.72 96.3606 1317.67 96.1236 1316.73 95.6497C1315.8 95.1757 1315.07 94.5116 1314.55 93.6575C1314.03 92.8033 1313.77 91.8502 1313.77 90.7981C1313.77 89.7304 1314.03 88.7642 1314.55 87.8997C1315.09 87.0351 1315.82 86.3632 1316.77 85.884C1317.71 85.4049 1318.77 85.1653 1319.93 85.1653ZM1330.34 85.3059C1331.36 85.3059 1332.2 85.5898 1332.84 86.1575C1333.49 86.7252 1333.81 87.4648 1333.81 88.3762C1333.81 88.996 1333.65 89.5377 1333.33 90.0012C1333.01 90.4596 1332.54 90.8215 1331.91 91.0872C1332.26 91.2747 1332.57 91.5299 1332.84 91.8528C1333.11 92.1757 1333.44 92.72 1333.84 93.4856C1334.51 94.8085 1335.01 95.72 1335.33 96.22H1332.98C1332.82 95.9804 1332.6 95.5976 1332.32 95.0715C1331.72 93.9101 1331.27 93.1288 1330.99 92.7278C1330.71 92.3215 1330.44 92.0351 1330.18 91.8684C1329.92 91.6965 1329.62 91.6106 1329.28 91.6106H1328.52V96.22H1326.41V85.3059H1330.34ZM1329.86 89.9622C1330.41 89.9622 1330.84 89.8241 1331.16 89.5481C1331.47 89.2721 1331.63 88.8944 1331.63 88.4153C1331.63 87.9153 1331.48 87.5429 1331.16 87.2981C1330.85 87.0481 1330.41 86.9231 1329.83 86.9231H1328.52V89.9622H1329.86ZM1341.83 85.1653C1342.96 85.1653 1343.97 85.3997 1344.88 85.8684C1345.78 86.3319 1346.5 87.0038 1347.04 87.884C1347.58 88.759 1347.84 89.72 1347.84 90.7668C1347.84 91.7877 1347.58 92.7356 1347.05 93.6106C1346.53 94.4804 1345.82 95.1575 1344.9 95.6418C1343.99 96.121 1342.96 96.3606 1341.81 96.3606C1340.68 96.3606 1339.65 96.1158 1338.73 95.6262C1337.8 95.1366 1337.09 94.4648 1336.57 93.6106C1336.05 92.7512 1335.8 91.8033 1335.8 90.7668C1335.8 89.7668 1336.05 88.8267 1336.57 87.9465C1337.09 87.0663 1337.8 86.384 1338.7 85.8997C1339.61 85.4101 1340.65 85.1653 1341.83 85.1653ZM1337.98 90.7668C1337.98 91.4908 1338.14 92.1418 1338.47 92.72C1338.8 93.2981 1339.25 93.746 1339.84 94.0637C1340.42 94.3814 1341.09 94.5403 1341.83 94.5403C1342.95 94.5403 1343.87 94.1887 1344.59 93.4856C1345.31 92.7825 1345.67 91.8762 1345.67 90.7668C1345.67 90.0429 1345.51 89.3918 1345.18 88.8137C1344.86 88.2304 1344.4 87.7799 1343.8 87.4622C1343.22 87.1444 1342.55 86.9856 1341.81 86.9856C1341.07 86.9856 1340.41 87.1471 1339.81 87.47C1339.22 87.7877 1338.77 88.2356 1338.45 88.8137C1338.14 89.3866 1337.98 90.0377 1337.98 90.7668ZM1351.86 85.3059V91.6575C1351.86 92.3085 1351.96 92.8267 1352.15 93.2122C1352.35 93.5976 1352.67 93.9153 1353.11 94.1653C1353.55 94.4153 1354.07 94.5403 1354.66 94.5403C1355.3 94.5403 1355.85 94.4231 1356.3 94.1887C1356.75 93.9491 1357.08 93.6262 1357.29 93.22C1357.5 92.8085 1357.6 92.2408 1357.6 91.5168V85.3059H1359.71V91.7903C1359.71 93.259 1359.27 94.3892 1358.39 95.1809C1357.51 95.9674 1356.27 96.3606 1354.66 96.3606C1353.65 96.3606 1352.77 96.1809 1352.02 95.8215C1351.28 95.4622 1350.72 94.9439 1350.33 94.2668C1349.94 93.5846 1349.74 92.7851 1349.74 91.8684V85.3059H1351.86ZM1366.27 85.3059C1367.29 85.3059 1368.11 85.6028 1368.75 86.1965C1369.39 86.7851 1369.71 87.5455 1369.71 88.4778C1369.71 89.4205 1369.39 90.1835 1368.74 90.7668C1368.1 91.3502 1367.24 91.6418 1366.19 91.6418H1364.16V96.22H1362.05V85.3059H1366.27ZM1365.74 89.9934C1366.3 89.9934 1366.74 89.8658 1367.05 89.6106C1367.37 89.3502 1367.53 88.9674 1367.53 88.4622C1367.53 87.4569 1366.89 86.9543 1365.59 86.9543H1364.16V89.9934H1365.74Z" fill="white"></path>
+          </svg>
+        </div>
+      </div>
+      <div class="main-screen__nav">
+        <a class="main-screen__tel" href="tel:http://+74952582045">+7 (495) 258-20-45</a>
+        <a class="main-screen__contacts" href="#footer">Контакты</a>
+        <button class="btn is-lg main-screen__request form-request__open" type="button">
+          <span>Заявка</span>
+          <svg width="38" height="27" viewbox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M32.0441 11.5L23.6959 1.98957L25.9505 0.010498L37.4945 13.1617L25.9506 26.3128L23.6959 24.3338L32.3279 14.5H0V11.5H32.0441Z" fill="white"></path>
+          </svg>
+        </button>
+      </div>
+    </section>
+    <section class="about">
+      <h2 class="sr-only">О компании</h2>
+      <div class="about-teaser">
+        <div class="container about-teaser__main">
+          <div class="about-teaser__text">
+            <p>«Полилог» – это эксперты в сфере PR, GR, event, SMM и Digital. Имея 20-летний опыт работы, мы предоставляем полный комплекс услуг по продвижению компаний и брендов, внедряем IT-решения в госсекторе, организуем и проводим мероприятия, создаём позитивный имидж и репутацию своим клиентам. Мы любим сложные задачи и берем ответственность за результат.</p>
+          </div>
+          <div class="about-teaser__additional">
+            <div class="about-teaser__figure">
+              <div class="about-teaser__figure-value">85+</div>
+              <div class="about-teaser__figure-caption">сотрудников</div>
+            </div>
+            <div class="about-teaser__additional-text">
+              <p>«Полилог» —  специалисты с широким спектром компетенций и знаний. Творческий потенциал и опыт позволяют формировать под каждый проект команду, задача которой выполнить взятые на себя обязательства по KPI.</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-teaser__bottom">
+          <div class="about-teaser__images-wrapper">
+            <div class="about-teaser__images" id="scene2">
+              <img class="about-teaser__image-bust" src="https://polylog.ru/wp-content/uploads/2020/09/image_bust@3x.png" data-depth="0.6" width="268" height="522" srcset="https://polylog.ru/wp-content/uploads/2020/09/image_bust@3x.png 2x" alt="Бюст"><img class="about-teaser__image-shape" src="https://polylog.ru/wp-content/uploads/2020/09/shape_circle-striped.svg" data-depth="-0.6" width="154" height="154" alt="Фигура"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="history" style="height: 3527.45px;">
+      <div class="history-scroll start">
+        <section class="history-events history-scroll__block">
+          <h2 class="sr-only">Предыстория</h2>
+          <div class="history-events__title">
+            <div class="history-events__title-row anim-item anim-item--no-hide anim-left">
+              <div class="history-events__title-item
+                   ">
+                Мы</div>
+            </div>
+            <div class="history-events__title-row anim-item anim-item--no-hide anim-left">
+              <div class="history-events__title-item
+                   ">
+                Создаём</div>
+            </div>
+            <div class="history-events__title-row anim-item anim-item--no-hide anim-left">
+              <div class="history-events__title-item
+                   history-events__title-item--flex									">
+                События
+                <span>с 2000 года</span>
+              </div>
+            </div>
+          </div>
+          <div class="history-events__info">
+            <div class="history-teaser__info-block">У «Полилог» богатый опыт в самых разных отраслях: атомная промышленность, машиностроение, производство пищевых и непищевых товаров, грузоперевозки, медицина, фармацевтика, страхование, банковское дело, fashion-индустрия</div>
+            <div class="history-teaser__info-block">
+              Мы первое в России PR-агентство, сертифицированное по стандарту ISO 9001:2015</div>
+          </div>
+        </section>
+        <section class="history-award history-scroll__block">
+          <h2 class="history-award__title anim-item anim-item--no-hide anim-bottom">Награды</h2>
+          <ul class="history-award__list">
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2021/12/award-rupor-2021.svg" alt=""></li>
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-1.svg" alt=""></li>
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-2.svg" alt=""></li>
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-3-1.svg" alt=""></li>
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-4-1.svg" alt=""></li>
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-5.svg" alt=""></li>
+            <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-7.svg" alt=""></li>
+          </ul>
+        </section>
+        <section class="history-final history-scroll__block" style="background-image: url( https://polylog.ru/wp-content/uploads/2020/10/wtc5.jpg );">
+          <h2 class="sr-only">Заключение</h2>
+          <div class="history-final__block anim-item anim-item--no-hide anim-scale-opacity">
+            <div class="history-final__value">21</div>
+            <div class="history-final__caption">год на рынке</div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section class="history-award history-award--mobile">
+      <h2 class="history-award__title anim-item anim-item--no-hide anim-bottom">Награды</h2>
+      <ul class="history-award__list">
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2021/12/award-rupor-2021.svg" alt=""></li>
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-1.svg" alt=""></li>
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-2.svg" alt=""></li>
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-3-1.svg" alt=""></li>
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-4-1.svg" alt=""></li>
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-5.svg" alt=""></li>
+        <li class="history-award__item anim-item anim-item--no-hide anim-left"><img src="https://polylog.ru/wp-content/uploads/2020/10/image_award-7.svg" alt=""></li>
+      </ul>
+    </section>
+    <section class="clients">
+      <div class="container clients__wrapper">
+        <h2 class="clients__title history-award__title anim-item anim-item--no-hide anim-bottom active">Клиенты</h2>
+        <ul class="clients__list">
+          <li class="clients__item clients__item-1 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Sber-2.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Atom-1.jpg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-2 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Gazprom.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_ING-1.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-3 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Ingostrah.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_InterRao.jpg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-4 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Kolmar.jpg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Lukoil.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-5 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Nobel.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_OTP.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-6 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Raz.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Renessans.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-7 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Rosbank.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Rosneft.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-8 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_RusGidro.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Sber.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-9 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_uralsib.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Vostok.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-10 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Renessans-1.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Nobel-1.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-11 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Bayer.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Philips.svg" width="200" height="100" alt="Логотип"></li>
+          <li class="clients__item clients__item-12 anim-item anim-item--no-hide anim-top">
+            <img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Adobe.svg" width="200" height="100" alt="Логотип"><img src="https://polylog.ru/wp-content/uploads/2020/09/logo_Scania.svg" width="200" height="100" alt="Логотип"></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+{% block body_suffix %}
+  <div class="services-popup">
+    <div class="services-popup__top">
+      <button class="services-popup__close" type="button"></button>
+    </div>
+    <div class="services-popup__content">
+      <ul id="menu-umeem" class="services-popup__list">
+        <li class="services-popup__item">
+          <a href="https://polylog.ru/services/organizaciya-meropriyatij" class="services-popup__link">Мероприятия</a>
+        </li>
+        <li class="services-popup__item">
+          <a href="https://polylog.ru/services/pr" class="services-popup__link">PR</a>
+        </li>
+        <li class="services-popup__item">
+          <a target="_blank" href="https://it.polylog.ru/" class="services-popup__link">Цифровые решения</a>
+        </li>
+        <li class="services-popup__item">
+          <a href="https://polylog.ru/services/fundraising" class="services-popup__link">Развитие</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="career-popup">
+    <div class="services-popup__top">
+      <button class="services-popup__close" type="button"></button>
+    </div>
+    <div class="services-popup__content">
+      <ul id="menu-karera" class="services-popup__list">
+        <li id="menu-item-988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-988">
+          <a href="https://polylog.ru/stazhirovka">Стажировка</a>
+        </li>
+        <li id="menu-item-989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-989">
+          <a href="https://polylog.ru/vakansii">Вакансии</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="portfolio-popup">
+    <div class="portfolio-popup__top">
+      <button class="portfolio-popup__close" type="button"></button>
+    </div>
+    <div class="portfolio-popup__content">
+      <div class="container">
+        <ol id="menu-kejsy" class="portfolio-main__list">
+          <li class="portfolio-main__item">
+            <a href="https://polylog.ru/case/molochnyj-forum" class="portfolio-main__link">
+              <span>VI Международный агропромышленный молочный форум</span>
+            </a>
+          </li>
+          <li class="portfolio-main__item">
+            <a href="https://polylog.ru/?post_type=case&amp;p=415" class="portfolio-main__link">
+              <span>День города Москвы 2018: PR-сопровождение</span>
+            </a>
+          </li>
+          <li class="portfolio-main__item">
+            <a href="https://polylog.ru/case/dni-dalnego-vostoka" class="portfolio-main__link">
+              <span>Фестиваль «Дни Дальнего Востока в Москве»</span>
+            </a>
+          </li>
+          <li class="portfolio-main__item">
+            <a href="https://polylog.ru/case/forum-rossiya-strana-vozmozhnostej" class="portfolio-main__link">
+              <span>Форум «Россия – страна возможностей»</span>
+            </a>
+          </li>
+          <li class="portfolio-main__item">
+            <a href="https://polylog.ru/case/katar-2022-piar-podgotovka-nachalas" class="portfolio-main__link">
+              <span>Катар 2022</span>
+            </a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="form__popup form__popup--request">
+    <button class="form__close">
+      <span></span>
+    </button>
+    <div class="form__content">
+      <div class="form__content-wrapper">
+        <div class="form__title">Заявка</div>
+        <div role="form" class="wpcf7" id="wpcf7-f5-o1" lang="ru-RU" dir="ltr">
+          <div class="screen-reader-response">
+            <p role="status" aria-live="polite" aria-atomic="true"></p>
+            <ul></ul>
+          </div>
+          <form action="/#wpcf7-f5-o1" method="post" class="wpcf7-form init form" novalidate="novalidate" data-status="init">
+            <div style="display: none">
+              <input type="hidden" name="_wpcf7" value="5" />
+              <input type="hidden" name="_wpcf7_version" value="5.5.3" />
+              <input type="hidden" name="_wpcf7_locale" value="ru_RU" />
+              <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f5-o1" />
+              <input type="hidden" name="_wpcf7_container_post" value="0" />
+              <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+              <input type="hidden" name="_wpcf7_recaptcha_response" value="03AGdBq26iHWts5EU3BF4R-WhjGjVvZeuGqfUGsc6a-ec_HWUaIS4OQCWT-UBHdSokGdq7airFFce9a9fCpI3wFKlf2vKc9Ja61yyMNK88T7gV3ErUWTC6HIpX-lf4VHISWfvBOPim1ud0msQuDBA9Q1PhKvwg4fpdtZOmkO9hipcar88A3s9TdGfueyHeCCnKRSHezby8tpovLb3m_ZV1oi4Jcq8A44ll9eLcwqgW1Wc5QU7nQHqk0Ce1Qpxz0pwN9RkGcF1uUmdTm5l6YazpEglT_8tlTHIuWfhMMmowFlfwb3mjydPnu0ZDV30xmE4dS5oEHYkU4Dh2j7oVYF5ACYvkqv2EO7oo7FrF42XUIefi0tAr5hYwfaKVoDVhYabL8PXnn3dxSqWsbCsM4-a_Dg6bqLYXvwkc8wwlvouKEBD8wf_2-e_IZiLN5KlKmW1U-OvAWkiCn8ye" />
+            </div>
+
+            <div class="form__fields">
+              <div class="form__row form__row--double">
+                <div class="form__item">
+                  <p>
+                    <label class="form__label" for="feedback-name">Имя</label><span class="wpcf7-form-control-wrap" data-name="feedback-name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form__input" id="feedback-name" aria-required="true" aria-invalid="false" placeholder="Имя" value="" type="text" name="feedback-name" spellcheck="false" data-ms-editor="true" /></span>
+                  </p>
+                </div>
+                <div class="form__item">
+                  <p>
+                    <label class="form__label" for="feedback-email">Email</label><span class="wpcf7-form-control-wrap" data-name="feedback-email"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form__input" id="feedback-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="feedback-email" /></span>
+                  </p>
+                </div>
+              </div>
+              <div class="form__row form__row--double">
+                <div class="form__item">
+                  <p>
+                    <label class="form__label" for="feedback-phone">Телефон</label><span class="wpcf7-form-control-wrap" data-name="feedback-phone"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-required wpcf7-validates-as-tel form__input" id="feedback-phone" aria-required="true" aria-invalid="false" value="" type="tel" name="feedback-phone" /></span>
+                  </p>
+                </div>
+                <div class="form__item">
+                  <p>
+                    <label class="form__label" for="feedback-theme">Тема</label
+                    ><span class="wpcf7-form-control-wrap" data-name="feedback-theme"
+                      ><select class="wpcf7-form-control wpcf7-select form__select select2-hidden-accessible" id="feedback-theme" aria-invalid="false" name="feedback-theme" data-select2-id="feedback-theme" tabindex="-1" aria-hidden="true">
+                        <option value="Фандзайзинг" data-select2-id="2">Фандзайзинг</option>
+                        <option value="Мероприятие">Мероприятие</option>
+                        <option value="PR">PR</option>
+                        <option value="Цифровые решения">Цифровые решения</option></select
+                      ><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="1" style="width: 100%"
+                        ><span class="selection"
+                          ><span class="select2-selection select2-selection--single form__select-container" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-feedback-theme-container"
+                            ><span class="select2-selection__rendered" id="select2-feedback-theme-container" role="textbox" aria-readonly="true" title="Фандзайзинг">Фандзайзинг</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span
+                        ><span class="dropdown-wrapper" aria-hidden="true"></span></span
+                    ></span>
+                  </p>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__item">
+                  <p>
+                    <label class="form__label" for="feedback-message">Сообщение</label><span class="wpcf7-form-control-wrap" data-name="feedback-message"><textarea cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea form__input form__input--textarea" id="feedback-message" aria-invalid="false" placeholder="Опишите подробнее Вашу заявку" name="feedback-message" spellcheck="false" data-ms-editor="true"></textarea></span>
+                  </p>
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__item">
+                  <p>
+                    <span class="wpcf7-form-control-wrap" data-name="agreement_subscription"
+                      ><span class="wpcf7-form-control wpcf7-acceptance optional"
+                        ><span class="wpcf7-list-item"
+                          ><label><input type="checkbox" name="agreement_subscription" value="1" class="visually-hidden form__input-checkbox" id="agreement_subscription" aria-invalid="false" /><span class="wpcf7-list-item-label">Подписаться на блог о PR и event-менеджменте</span></label></span
+                        ></span
+                      ></span
+                    >
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="form__nav">
+              <p>
+                <button class="btn is-lg form__submit" type="submit">
+                  <br />
+                  <span>Отправить</span><svg width="38" height="27" viewBox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M32.0441 11.5L23.6959 1.98957L25.9505 0.010498L37.4945 13.1617L25.9506 26.3128L23.6959 24.3338L32.3279 14.5H0V11.5H32.0441Z" fill="white"></path></svg><br />
+                </button>
+              </p>
+              <div class="form__agreement">
+                <p>Нажимая на кнопку, вы даете <a href="/privacy-policy/" target="_blank">согласие на обработку своих персональных данных</a></p>
+              </div>
+            </div>
+
+
+            <p style="display: none !important">
+              <label>Δ<textarea name="_wpcf7_ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="_wpcf7_ak_js" value="1640202719733" />
+              <script>
+                document.getElementById('ak_js').setAttribute('value', new Date().getTime());
+              </script>
+            </p>
+            <div class="wpcf7-response-output" aria-hidden="true"></div>
+          </form>
+        </div>
+        <div class="form__success">Успешно отправлена!</div>
+      </div>
+    </div>
+  </div>
+  <a class="to-top" href="#top">
+    <svg width="38" height="27" viewbox="0 0 38 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M32.0441 11.5L23.6959 1.98957L25.9505 0.010498L37.4945 13.1617L25.9506 26.3128L23.6959 24.3338L32.3279 14.5H0V11.5H32.0441Z" fill="white"></path>
+    </svg>
+  </a>
+  <script src="https://polylog.ru/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.7" id="regenerator-runtime-js"></script>
+  <script src="https://polylog.ru/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+  <script id="contact-form-7-js-extra">
+    var wpcf7 = {
+      api: {
+        root: 'https:\/\/polylog.ru\/wp-json\/',
+        namespace: 'contact-form-7\/v1',
+      },
+    };
+  </script>
+  <script id="wfi18njs-js-extra">
+    var WordfenceI18nStrings = {
+      '${totalIPs} addresses in this network': '${totalIPs} addresses in this network',
+      '%s in POST body: %s': '%s in POST body: %s',
+      '%s in cookie: %s': '%s in cookie: %s',
+      '%s in file: %s': '%s in file: %s',
+      '%s in query string: %s': '%s in query string: %s',
+      '%s is not valid hostname': '%s is not valid hostname',
+      '.htaccess Updated': '.htaccess Updated',
+      '.htaccess change': '.htaccess change',
+      '404 Not Found': '404 Not Found',
+      'Activity Log Sent': 'Activity Log Sent',
+      'Add action to allowlist': 'Add action to allowlist',
+      'Add code to .htaccess': 'Add code to .htaccess',
+      'All Hits': 'All Hits',
+      'All capabilties of admin user %s were successfully revoked.': 'All capabilties of admin user %s were successfully revoked.',
+      'An error occurred': 'An error occurred',
+      'An error occurred when adding the request to the allowlist.': 'An error occurred when adding the request to the allowlist.',
+      'Are you sure you want to allowlist this action?': 'Are you sure you want to allowlist this action?',
+      'Authentication Code': 'Authentication Code',
+      'Background Request Blocked': 'Background Request Blocked',
+      'Block This Network': 'Block This Network',
+      Blocked: 'Blocked',
+      'Blocked By Firewall': 'Blocked By Firewall',
+      'Blocked WAF': 'Blocked WAF',
+      'Blocked by Wordfence': 'Blocked by Wordfence',
+      'Blocked by Wordfence plugin settings': 'Blocked by Wordfence plugin settings',
+      'Blocked by the Wordfence Application Firewall and plugin settings': 'Blocked by the Wordfence Application Firewall and plugin settings',
+      'Blocked by the Wordfence Security Network': 'Blocked by the Wordfence Security Network',
+      'Blocked by the Wordfence Web Application Firewall': 'Blocked by the Wordfence Web Application Firewall',
+      Bot: 'Bot',
+      'Cancel Changes': 'Cancel Changes',
+      'Cellphone Sign-In Recovery Codes': 'Cellphone Sign-In Recovery Codes',
+      'Cellphone Sign-in activated for user.': 'Cellphone Sign-in activated for user.',
+      'Click here to download a backup copy of this file now': 'Click here to download a backup copy of this file now',
+      'Click here to download a backup copy of your .htaccess file now': 'Click here to download a backup copy of your .htaccess file now',
+      'Click to fix .htaccess': 'Click to fix .htaccess',
+      Close: 'Close',
+      Crawlers: 'Crawlers',
+      'Diagnostic report has been sent successfully.': 'Diagnostic report has been sent successfully.',
+      'Directory Listing Disabled': 'Directory Listing Disabled',
+      'Directory listing has been disabled on your server.': 'Directory listing has been disabled on your server.',
+      Disabled: 'Disabled',
+      Dismiss: 'Dismiss',
+      "Don't ask again": "Don't ask again",
+      Download: 'Download',
+      'Download Backup File': 'Download Backup File',
+      'Each line of 16 letters and numbers is a single recovery code, with optional spaces for readability. When typing your password, enter "wf" followed by the entire code like "mypassword wf1234 5678 90AB CDEF". If your site shows a separate prompt for entering a code after entering only your username and password, enter only the code like "1234 5678 90AB CDEF". Your recovery codes are:': 'Each line of 16 letters and numbers is a single recovery code, with optional spaces for readability. When typing your password, enter "wf" followed by the entire code like "mypassword wf1234 5678 90AB CDEF". If your site shows a separate prompt for entering a code after entering only your username and password, enter only the code like "1234 5678 90AB CDEF". Your recovery codes are:',
+      'Email Diagnostic Report': 'Email Diagnostic Report',
+      'Email Wordfence Activity Log': 'Email Wordfence Activity Log',
+      'Enter a valid IP or domain': 'Enter a valid IP or domain',
+      'Enter the email address you would like to send the Wordfence activity log to. Note that the activity log may contain thousands of lines of data. This log is usually only sent to a member of the Wordfence support team. It also contains your PHP configuration from the phpinfo() function for diagnostic data.': 'Enter the email address you would like to send the Wordfence activity log to. Note that the activity log may contain thousands of lines of data. This log is usually only sent to a member of the Wordfence support team. It also contains your PHP configuration from the phpinfo() function for diagnostic data.',
+      Error: 'Error',
+      'Error Enabling All Options Page': 'Error Enabling All Options Page',
+      'Error Restoring Defaults': 'Error Restoring Defaults',
+      'Error Saving Option': 'Error Saving Option',
+      'Error Saving Options': 'Error Saving Options',
+      'Failed Login': 'Failed Login',
+      'Failed Login: Invalid Username': 'Failed Login: Invalid Username',
+      'Failed Login: Valid Username': 'Failed Login: Valid Username',
+      'File hidden successfully': 'File hidden successfully',
+      'File restored OK': 'File restored OK',
+      'Filter Traffic': 'Filter Traffic',
+      'Firewall Response': 'Firewall Response',
+      'Full Path Disclosure': 'Full Path Disclosure',
+      'Google Bot': 'Google Bot',
+      'Google Crawlers': 'Google Crawlers',
+      'HTTP Response Code': 'HTTP Response Code',
+      Human: 'Human',
+      Humans: 'Humans',
+      IP: 'IP',
+      'Key:': 'Key:',
+      'Last Updated: %s': 'Last Updated: %s',
+      'Learn more about repairing modified files.': 'Learn more about repairing modified files.',
+      'Loading...': 'Loading...',
+      'Locked Out': 'Locked Out',
+      'Locked out from logging in': 'Locked out from logging in',
+      'Logged In': 'Logged In',
+      Logins: 'Logins',
+      'Logins and Logouts': 'Logins and Logouts',
+      'Look up IP or Domain': 'Look up IP or Domain',
+      'Manual block by administrator': 'Manual block by administrator',
+      'Next Update Check: %s': 'Next Update Check: %s',
+      'No activity to report yet. Please complete your first scan.': 'No activity to report yet. Please complete your first scan.',
+      'No issues have been ignored.': 'No issues have been ignored.',
+      'No new issues have been found.': 'No new issues have been found.',
+      'No rules were updated. Please verify you have permissions to write to the \/wp-content\/wflogs directory.': 'No rules were updated. Please verify you have permissions to write to the \/wp-content\/wflogs directory.',
+      'No rules were updated. Please verify your website can reach the Wordfence servers.': 'No rules were updated. Please verify your website can reach the Wordfence servers.',
+      'No rules were updated. Your website has reached the maximum number of rule update requests. Please try again later.': 'No rules were updated. Your website has reached the maximum number of rule update requests. Please try again later.',
+      'Note: Status will update when changes are saved': 'Note: Status will update when changes are saved',
+      OK: 'OK',
+      'Pages Not Found': 'Pages Not Found',
+      'Paid Members Only': 'Paid Members Only',
+      'Please enter a valid IP address or domain name for your whois lookup.': 'Please enter a valid IP address or domain name for your whois lookup.',
+      'Please enter a valid email address.': 'Please enter a valid email address.',
+      'Please include your support ticket number or forum username.': 'Please include your support ticket number or forum username.',
+      "Please make a backup of this file before proceeding. If you need to restore this backup file, you can copy it to the following path from your site's root:": "Please make a backup of this file before proceeding. If you need to restore this backup file, you can copy it to the following path from your site's root:",
+      'Please specify a reason': 'Please specify a reason',
+      'Please specify a valid IP address range in the form of "1.2.3.4 - 1.2.3.5" without quotes. Make sure the dash between the IP addresses in a normal dash (a minus sign on your keyboard) and not another character that looks like a dash.': 'Please specify a valid IP address range in the form of "1.2.3.4 - 1.2.3.5" without quotes. Make sure the dash between the IP addresses in a normal dash (a minus sign on your keyboard) and not another character that looks like a dash.',
+      'Please specify either an IP address range, Hostname or a web browser pattern to match.': 'Please specify either an IP address range, Hostname or a web browser pattern to match.',
+      'Recent Activity': 'Recent Activity',
+      'Recovery Codes': 'Recovery Codes',
+      Redirected: 'Redirected',
+      'Redirected by Country Blocking bypass URL': 'Redirected by Country Blocking bypass URL',
+      Referer: 'Referer',
+      'Registered Users': 'Registered Users',
+      'Restore Defaults': 'Restore Defaults',
+      'Rule Update Failed': 'Rule Update Failed',
+      'Rules Updated': 'Rules Updated',
+      'Save Changes': 'Save Changes',
+      'Scan Complete.': 'Scan Complete.',
+      'Scan the code below with your authenticator app to add this account. Some authenticator apps also allow you to type in the text version instead.': 'Scan the code below with your authenticator app to add this account. Some authenticator apps also allow you to type in the text version instead.',
+      'Security Event': 'Security Event',
+      Send: 'Send',
+      'Sorry, but no data for that IP or domain was found.': 'Sorry, but no data for that IP or domain was found.',
+      'Specify a valid IP range': 'Specify a valid IP range',
+      'Specify a valid hostname': 'Specify a valid hostname',
+      'Specify an IP range, Hostname or Browser pattern': 'Specify an IP range, Hostname or Browser pattern',
+      'Success deleting file': 'Success deleting file',
+      'Success removing option': 'Success removing option',
+      'Success restoring file': 'Success restoring file',
+      'Success updating option': 'Success updating option',
+      'Successfully deleted admin': 'Successfully deleted admin',
+      'Successfully revoked admin': 'Successfully revoked admin',
+      'Test Email Sent': 'Test Email Sent',
+      "The 'How does Wordfence get IPs' option was successfully updated to the recommended value.": "The 'How does Wordfence get IPs' option was successfully updated to the recommended value.",
+      'The Full Path disclosure issue has been fixed': 'The Full Path disclosure issue has been fixed',
+      'The admin user %s was successfully deleted.': 'The admin user %s was successfully deleted.',
+      'The file %s was successfully deleted.': 'The file %s was successfully deleted.',
+      'The file %s was successfully hidden from public view.': 'The file %s was successfully hidden from public view.',
+      'The file %s was successfully restored.': 'The file %s was successfully restored.',
+      'The option %s was successfully removed.': 'The option %s was successfully removed.',
+      'The request has been allowlisted. Please try it again.': 'The request has been allowlisted. Please try it again.',
+      'There was an error while sending the email.': 'There was an error while sending the email.',
+      'This will be shown only once. Keep these codes somewhere safe.': 'This will be shown only once. Keep these codes somewhere safe.',
+      Throttled: 'Throttled',
+      'Two Factor Status': 'Two Factor Status',
+      Type: 'Type',
+      'Type: %s': 'Type: %s',
+      URL: 'URL',
+      'Unable to automatically hide file': 'Unable to automatically hide file',
+      'Use one of these %s codes to log in if you are unable to access your phone. Codes are 16 characters long, plus optional spaces. Each one may be used only once.': 'Use one of these %s codes to log in if you are unable to access your phone. Codes are 16 characters long, plus optional spaces. Each one may be used only once.',
+      'Use one of these %s codes to log in if you lose access to your authenticator device. Codes are 16 characters long, plus optional spaces. Each one may be used only once.': 'Use one of these %s codes to log in if you lose access to your authenticator device. Codes are 16 characters long, plus optional spaces. Each one may be used only once.',
+      'User Agent': 'User Agent',
+      'User ID': 'User ID',
+      Username: 'Username',
+      'WHOIS LOOKUP': 'WHOIS LOOKUP',
+      'We are about to change your <em>.htaccess<\/em> file. Please make a backup of this file before proceeding.': 'We are about to change your <em>.htaccess<\/em> file. Please make a backup of this file before proceeding.',
+      "We can't modify your .htaccess file for you because: %s": "We can't modify your .htaccess file for you because: %s",
+      'We encountered a problem': 'We encountered a problem',
+      'Wordfence Firewall blocked a background request to WordPress for the URL %s. If this occurred as a result of an intentional action, you may consider allowlisting the request to allow it in the future.': 'Wordfence Firewall blocked a background request to WordPress for the URL %s. If this occurred as a result of an intentional action, you may consider allowlisting the request to allow it in the future.',
+      'Wordfence is working...': 'Wordfence is working...',
+      "You are using Nginx as your web server. You'll need to disable autoindexing in your nginx.conf. See the <a target='_blank'  rel='noopener noreferrer' href='https:\/\/nginx.org\/en\/docs\/http\/ngx_http_autoindex_module.html'>Nginx docs for more info<\/a> on how to do this.": "You are using Nginx as your web server. You'll need to disable autoindexing in your nginx.conf. See the <a target='_blank'  rel='noopener noreferrer' href='https:\/\/nginx.org\/en\/docs\/http\/ngx_http_autoindex_module.html'>Nginx docs for more info<\/a> on how to do this.",
+      'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually delete or hide those files.': 'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually delete or hide those files.',
+      'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually modify your php.ini to disable <em>display_error<\/em>': 'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually modify your php.ini to disable <em>display_error<\/em>',
+      "You forgot to include a reason you're blocking this IP range. We ask you to include this for your own record keeping.": "You forgot to include a reason you're blocking this IP range. We ask you to include this for your own record keeping.",
+      'You have unsaved changes to your options. If you leave this page, those changes will be lost.': 'You have unsaved changes to your options. If you leave this page, those changes will be lost.',
+      'Your .htaccess has been updated successfully. Please verify your site is functioning normally.': 'Your .htaccess has been updated successfully. Please verify your site is functioning normally.',
+      'Your Wordfence activity log was sent to %s': 'Your Wordfence activity log was sent to %s',
+      'Your rules have been updated successfully.': 'Your rules have been updated successfully.',
+      'Your rules have been updated successfully. You are currently using the free version of Wordfence. Upgrade to Wordfence premium to have your rules updated automatically as new threats emerge. <a href="https:\/\/www.wordfence.com\/wafUpdateRules1\/wordfence-signup\/">Click here to purchase a premium license<\/a>. <em>Note: Your rules will still update every 30 days as a free user.<\/em>': 'Your rules have been updated successfully. You are currently using the free version of Wordfence. Upgrade to Wordfence premium to have your rules updated automatically as new threats emerge. <a href="https:\/\/www.wordfence.com\/wafUpdateRules1\/wordfence-signup\/">Click here to purchase a premium license<\/a>. <em>Note: Your rules will still update every 30 days as a free user.<\/em>',
+      "Your test email was sent to the requested email address. The result we received from the WordPress wp_mail() function was: %s<br \/><br \/>A 'True' result means WordPress thinks the mail was sent without errors. A 'False' result means that WordPress encountered an error sending your mail. Note that it's possible to get a 'True' response with an error elsewhere in your mail system that may cause emails to not be delivered.": "Your test email was sent to the requested email address. The result we received from the WordPress wp_mail() function was: %s<br \/><br \/>A 'True' result means WordPress thinks the mail was sent without errors. A 'False' result means that WordPress encountered an error sending your mail. Note that it's possible to get a 'True' response with an error elsewhere in your mail system that may cause emails to not be delivered.",
+      'blocked by firewall': 'blocked by firewall',
+      'blocked by firewall for %s': 'blocked by firewall for %s',
+      'blocked by real-time IP blocklist': 'blocked by real-time IP blocklist',
+      'blocked by the Wordfence Security Network': 'blocked by the Wordfence Security Network',
+      'blocked for %s': 'blocked for %s',
+      'locked out from logging in': 'locked out from logging in',
+    };
+  </script>
+  <script src="https://polylog.ru/wp-includes/js/jquery/jquery.min.js?ver=3.6.0" id="jquery-core-js"></script>
+  <script id="wordfenceAJAXjs-js-extra">
+    var WFAJAXWatcherVars = {
+      nonce: '2f1cb4b5fe',
+    };
+  </script>
+  <script src="https://polylog.ru/wp-includes/js/admin-bar.min.js?ver=5.8.2" id="admin-bar-js"></script>
+  <script id="jetpack-scan-show-notice-js-extra">
+    var Jetpack_Scan = {
+      nonce: '16f2d5977d',
+      scan_endpoint: 'https:\/\/polylog.ru\/wp-json\/jetpack\/v4\/scan',
+      scan_dashboard_url: 'https:\/\/jetpack.com\/redirect\/?source=calypso-scanner&site=polylog.ru',
+      singular: '<svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http:\/\/www.w3.org\/2000\/svg"><path d="M9 0L0 4V10C0 15.55 3.84 20.74 9 22C14.16 20.74 18 15.55 18 10V4L9 0Z" fill="#D63638"\/><path d="M7.99121 6.00894H10.0085V11.9968H7.99121V6.00894Z" fill="#FFF"\/><path d="M7.99121 14.014H10.0085V15.9911H7.99121V14.014Z" fill="#FFF"\/><\/svg> \u041e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u0430 \u0443\u0433\u0440\u043e\u0437\u0430',
+      multiple: '<svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http:\/\/www.w3.org\/2000\/svg"><path d="M9 0L0 4V10C0 15.55 3.84 20.74 9 22C14.16 20.74 18 15.55 18 10V4L9 0Z" fill="#D63638"\/><path d="M7.99121 6.00894H10.0085V11.9968H7.99121V6.00894Z" fill="#FFF"\/><path d="M7.99121 14.014H10.0085V15.9911H7.99121V14.014Z" fill="#FFF"\/><\/svg> \u041e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u044b \u0443\u0433\u0440\u043e\u0437\u044b',
+    };
+  </script>
+  <script id="polylog-parallax-js-after">
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+    var scene2 = document.getElementById('scene2');
+    var parallax = new Parallax(scene2);
+  </script>
+  <script id="jquery-fancybox-js-after">
+    var fb_timeout,
+      fb_opts = {
+        overlayShow: true,
+        hideOnOverlayClick: true,
+        showCloseButton: true,
+        margin: 20,
+        centerOnScroll: false,
+        enableEscapeButton: true,
+        autoScale: true,
+      };
+    if (typeof easy_fancybox_handler === 'undefined') {
+      var easy_fancybox_handler = function () {
+        jQuery('.nofancybox,a.wp-block-file__button,a.pin-it-button,a[href*="pinterest.com/pin/create"],a[href*="facebook.com/share"],a[href*="twitter.com/share"]').addClass('nolightbox');
+        /* IMG */
+        var fb_IMG_select = 'a[href*=".jpg"]:not(.nolightbox,li.nolightbox>a),area[href*=".jpg"]:not(.nolightbox),a[href*=".jpeg"]:not(.nolightbox,li.nolightbox>a),area[href*=".jpeg"]:not(.nolightbox),a[href*=".png"]:not(.nolightbox,li.nolightbox>a),area[href*=".png"]:not(.nolightbox),a[href*=".webp"]:not(.nolightbox,li.nolightbox>a),area[href*=".webp"]:not(.nolightbox)';
+        jQuery(fb_IMG_select).addClass('fancybox image');
+        var fb_IMG_sections = jQuery('.gallery,.wp-block-gallery,.tiled-gallery,.wp-block-jetpack-tiled-gallery');
+        fb_IMG_sections.each(function () {
+          jQuery(this)
+            .find(fb_IMG_select)
+            .attr('rel', 'gallery-' + fb_IMG_sections.index(this));
+        });
+        jQuery('a.fancybox,area.fancybox,li.fancybox a').each(function () {
+          jQuery(this).fancybox(
+            jQuery.extend({}, fb_opts, {
+              transitionIn: 'elastic',
+              easingIn: 'easeOutBack',
+              transitionOut: 'elastic',
+              easingOut: 'easeInBack',
+              opacity: false,
+              hideOnContentClick: false,
+              titleShow: true,
+              titlePosition: 'over',
+              titleFromAlt: true,
+              showNavArrows: true,
+              enableKeyboardNav: true,
+              cyclic: false,
+            })
+          );
+        });
+      };
+      jQuery('a.fancybox-close').on('click', function (e) {
+        e.preventDefault();
+        jQuery.fancybox.close();
+      });
+    }
+    var easy_fancybox_auto = function () {
+      setTimeout(function () {
+        jQuery('#fancybox-auto').trigger('click');
+      }, 1000);
+    };
+    jQuery(easy_fancybox_handler);
+    jQuery(document).on('post-load', easy_fancybox_handler);
+    jQuery(easy_fancybox_auto);
+  </script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdPfn4UAAAAAH5VA-qOpvyyfei6KMaAqWJwAbQi&amp;ver=3.0" id="google-recaptcha-js"></script>
+  <script id="wpcf7-recaptcha-js-extra">
+    var wpcf7_recaptcha = {
+      sitekey: '6LdPfn4UAAAAAH5VA-qOpvyyfei6KMaAqWJwAbQi',
+      actions: {
+        homepage: 'homepage',
+        contactform: 'contactform',
+      },
+    };
+  </script>
+  <script data-wpacu-own-inline-script="true">
+    console.log('Asset CleanUp: "LIVE MODE" (тестовый режим не включен, поэтому все изменения плагина видны всем: вам, зарегистрированному администратору и постоянным посетителям)');
+  </script>
+  <script>
+    (function () {
+      var expirationDate = new Date();
+      expirationDate.setTime(expirationDate.getTime() + 31536000 * 1000);
+      document.cookie = 'pll_language=ru; expires=' + expirationDate.toUTCString() + '; path=/; secure; SameSite=Lax';
+    })();
+  </script>
+  <script>
+    document.addEventListener(
+      'wpcf7mailsent',
+      function (event) {
+        jQuery('.form__popup--request .wpcf7').hide();
+        jQuery('.form__success').show();
+      },
+      false
+    );
+  </script>
+  <script>
+    if (document.querySelector('#menu-glavnoe-menyu .header__menu-link--cases a')) {
+      document.querySelector('#menu-glavnoe-menyu .header__menu-link--cases a').classList.add('current');
+    }
+  </script>
+  <script>
+    document.querySelector('#menu-glavnoe-menyu .header__menu-link--services a').classList.add('current');
+    if (document.querySelector('#menu-glavnoe-menyu .header__menu-link--cases a')) {
+      document.querySelector('#menu-glavnoe-menyu .header__menu-link--cases a').classList.remove('current');
+    }
+  </script>
+  <script>
+    document.querySelector('#menu-glavnoe-menyu .header__menu-link--carrer a').classList.remove('current');
+    document.querySelector('#menu-glavnoe-menyu .header__menu-link--services a').classList.remove('current');
+    document.querySelector('#menu-glavnoe-menyu .header__menu-link--cases a').classList.remove('current');
+    document.querySelector('#menu-glavnoe-menyu .header__menu-link--carrer a').classList.remove('current');
+  </script>
+  <script>
+    if (window.innerWidth >= 600) {
+      jQuery(function ($) {
+        var max_col_height = 0;
+        jQuery('.pr-directions__list .pr-directions__item-icon').each(function () {
+          if (jQuery(this).height() > max_col_height) {
+            max_col_height = jQuery(this).height();
+          }
+        });
+        jQuery('.pr-directions__list .pr-directions__item-icon').height(max_col_height);
+      });
+    }
+  </script>
+  <script defer="" src="https://polylog.ru/wp-content/cache/autoptimize/js/autoptimize_a44c96c76275c1ab319007622952c262.js"></script>
+  <div class="extLives"></div>
+  <div id="wfboxOverlay" style="display: none"></div>
+  <div id="wordfenceBox" class="" role="dialog" tabindex="-1" style="display: none">
+    <div id="wfboxWrapper">
+      <div>
+        <div id="wfboxTopLeft" style="float: left"></div>
+        <div id="wfboxTopCenter" style="float: left"></div>
+        <div id="wfboxTopRight" style="float: left"></div>
+      </div>
+      <div style="clear: left">
+        <div id="wfboxMiddleLeft" style="float: left"></div>
+        <div id="wfboxContent" style="float: left">
+          <div id="wfboxTitle" style="float: left"></div>
+          <div id="wfboxCurrent" style="float: left"></div>
+          <div id="wfboxLoadingOverlay" style="float: left"></div>
+          <div id="wfboxLoadingGraphic" style="float: left"></div>
+        </div>
+        <div id="wfboxMiddleRight" style="float: left"></div>
+      </div>
+      <div style="clear: left">
+        <div id="wfboxBottomLeft" style="float: left"></div>
+        <div id="wfboxBottomCenter" style="float: left"></div>
+        <div id="wfboxBottomRight" style="float: left"></div>
+      </div>
+    </div>
+    <div style="position: absolute; width: 9999px; visibility: hidden; display: none; max-width: none"></div>
+  </div>
+  <div>
+    <div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; position: fixed; visibility: hidden; display: block; transition: right 0.3s ease 0s; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden">
+      <div class="grecaptcha-logo">
+        <iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=2&amp;k=6LdPfn4UAAAAAH5VA-qOpvyyfei6KMaAqWJwAbQi&amp;co=aHR0cHM6Ly9wb2x5bG9nLnJ1OjQ0Mw..&amp;hl=en&amp;v=VZKEDW9wslPbEc9RmzMqaOAP&amp;size=invisible&amp;cb=x3qm4xogyhk8" width="256" height="60" role="presentation" name="a-24xiew5an0ps" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+      </div>
+      <div class="grecaptcha-error"></div>
+      <textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none"></textarea>
+    </div>
+    <iframe style="display: none"></iframe>
+  </div>
+  <div id="fancybox-tmp"></div>
+  <div id="fancybox-loading">
+    <div></div>
+  </div>
+  <div id="fancybox-overlay"></div>
+  <div id="fancybox-wrap" class="fancybox-ie">
+    <div id="fancybox-outer">
+      <div class="fancybox-bg" id="fancybox-bg-n"></div>
+      <div class="fancybox-bg" id="fancybox-bg-ne"></div>
+      <div class="fancybox-bg" id="fancybox-bg-e"></div>
+      <div class="fancybox-bg" id="fancybox-bg-se"></div>
+      <div class="fancybox-bg" id="fancybox-bg-s"></div>
+      <div class="fancybox-bg" id="fancybox-bg-sw"></div>
+      <div class="fancybox-bg" id="fancybox-bg-w"></div>
+      <div class="fancybox-bg" id="fancybox-bg-nw"></div>
+      <div id="fancybox-content"></div>
+      <a id="fancybox-close"></a>
+      <div id="fancybox-title"></div>
+      <a id="fancybox-left">
+        <span class="fancy-ico" id="fancybox-left-ico"></span>
+      </a>
+      <a id="fancybox-right">
+        <span class="fancy-ico" id="fancybox-right-ico"></span>
+      </a>
+    </div>
+  </div>
+{% endblock %}

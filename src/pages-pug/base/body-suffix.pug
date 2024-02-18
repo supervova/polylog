@@ -1,0 +1,151 @@
+.services-popup
+  .services-popup__top
+    button.services-popup__close(type='button')
+  .services-popup__content
+    ul#menu-umeem.services-popup__list
+      mixin dropDownLink(label, href, classBase)
+        li(class= `${classBase}__item`)
+          a(class= `${classBase}__link`, target!=attributes.target)
+            = label
+
+      +dropDownLink('Мероприятия', '/organizaciya-meropriyatij/', 'services-popup')
+      +dropDownLink('PR', '/pr/', 'services-popup')
+      +dropDownLink('Цифровые решения', 'https://it.polylog.ru/', 'services-popup')(target='_blank')
+      +dropDownLink('Развитие', '/fundraising/', 'services-popup')(target='_blank')
+
+.career-popup
+  .services-popup__top
+    button.services-popup__close(type='button')
+  .services-popup__content
+    ul#menu-karera.services-popup__list
+      li#menu-item-988.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-988
+        a(href='https://www.polylog.ru/stazhirovka/') Стажировка
+      li#menu-item-989.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-989
+        a(href='https://www.polylog.ru/vakansii/') Вакансии
+
+.portfolio-popup
+  .portfolio-popup__top
+    button.portfolio-popup__close(type='button')
+  .portfolio-popup__content
+    .container
+      ol#menu-kejsy.portfolio-main__list
+        li.portfolio-main__item
+          a.portfolio-main__link(href='https://www.polylog.ru/case/molochnyj-forum/')
+            span VI Международный агропромышленный молочный форум
+        li.portfolio-main__item
+          a.portfolio-main__link(href='https://www.polylog.ru/?post_type=case&p=415')
+            span День города Москвы 2018: PR-сопровождение
+        li.portfolio-main__item
+          a.portfolio-main__link(href='https://www.polylog.ru/case/dni-dalnego-vostoka/')
+            span Фестиваль «Дни Дальнего Востока в Москве»
+        li.portfolio-main__item
+          a.portfolio-main__link(href='https://www.polylog.ru/case/forum-rossiya-strana-vozmozhnostej/')
+            span Форум «Россия – страна возможностей»
+        li.portfolio-main__item
+          a.portfolio-main__link(href='https://www.polylog.ru/?post_type=case&p=486')
+            span Катар 2022
+
+.form__popup.form__popup--request
+  button.form__close
+    span
+  .form__content
+    .form__content-wrapper
+      .form__title Заявка
+      .wpcf7#wpcf7-f5-o1(role='form', lang='ru-RU', dir='ltr')
+        .screen-reader-response
+          p(role='status', aria-live='polite', aria-atomic='true')
+          ul
+        form.wpcf7-form.init.form(action='/#wpcf7-f5-o1', method='post', novalidate data-status='init')
+          div(style='display: none')
+            input(type='hidden', name='_wpcf7', value='5')
+            input(type='hidden', name='_wpcf7_version', value='5.4.1')
+            input(type='hidden', name='_wpcf7_locale', value='ru_RU')
+            input(type='hidden', name='_wpcf7_unit_tag', value='wpcf7-f5-o1')
+            input(type='hidden', name='_wpcf7_container_post', value='0')
+            input(type='hidden', name='_wpcf7_posted_data_hash')
+            input(type='hidden', name='_wpcf7_recaptcha_response', value='03AGdBq25VaHGecX7GEWtRLfIGvBbA1WaA76V_fCiM7FlVpQVZK_cnoHaQmJ1m9Md7r9CxGCe8ImQ9W-wc8xbey2FwcdMNwHvumKS0QxdHaYsdp0UruWisT0SD36kqrYzuUhCrEfFf5u0RUw7vrF_yfB3zR4xOz6-VFCwlhbRptZxKtf08ZD5aYLrtbIKdD46m5peFi4H7tjpR5shTjvLruyo0YrFd_Z6OZ9gG9kNdJzqGsgymQYJKPwvSDtsG3ut_Hjq2TcgYlfgJ88PdU3L1vNymqQFt6hpCzmdOvQDdfpxabvIAwD6fOT5f5J9F_GPdz2GXpp-gd72s1PBjVxWhGbXiZdGxg-3k4mSmMMU5sIzHaLpIgH7mKMVKXkvWTSPXfPUfCKgj75UXMGnEAwf6DPtkkPmaSNtaZ8tNRFvcYTvXAz-VNY9wosVlhIjxIeM0tbfVN3bPnOHw')
+          .form__fields
+            .form__row.form__row--double
+              .form__item
+                label.form__label(for) Имя
+                span.wpcf7-form-control-wrap.feedback-name
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required.form__input(type='text', name='feedback-name', size='40', aria-required='true', aria-invalid='false', placeholder='Имя', style='background-image: url(\'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==\'); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%')
+              .form__item
+                label.form__label(for) Email
+                span.wpcf7-form-control-wrap.feedback-email
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email.form__input(type='email', name='feedback-email', size='40', aria-required='true', aria-invalid='false', placeholder='Email')
+            .form__row.form__row--double
+              .form__item
+                label.form__label(for) Телефон
+                span.wpcf7-form-control-wrap.feedback-phone
+                  input.wpcf7-form-control.wpcf7-text.wpcf7-tel.wpcf7-validates-as-required.wpcf7-validates-as-tel.form__input(type='tel', name='feedback-phone', size='40', aria-required='true', aria-invalid='false')
+              .form__item
+                label.form__label(for) Тема
+                span.wpcf7-form-control-wrap.feedback-theme
+                  select.wpcf7-form-control.wpcf7-select.form__select.select2-hidden-accessible(name='feedback-theme', aria-invalid='false', data-select2-id='1', tabindex='-1', aria-hidden='true')
+                    option(value='Фандзайзинг', data-select2-id='3') Фандзайзинг
+                    option(value='Мероприятие') Мероприятие
+                    option(value='PR') PR
+                    option(value='Цифровые решения') Цифровые решения
+                  span.select2.select2-container.select2-container--default(dir='ltr', data-select2-id='2', style='width: 100%')
+                    span.selection
+                      span.select2-selection.select2-selection--single.form__select-container(role='combobox', aria-haspopup='true', aria-expanded='false', tabindex='0', aria-disabled='false', aria-labelledby='select2-feedback-theme-o4-container')
+                        span.select2-selection__rendered#select2-feedback-theme-o4-container(role='textbox', aria-readonly='true', title='Фандзайзинг') Фандзайзинг
+                        span.select2-selection__arrow(role='presentation')
+                          b(role='presentation')
+                    span.dropdown-wrapper(aria-hidden='true')
+            .form__row
+              .form__item
+                label.form__label(for) Сообщение
+                span.wpcf7-form-control-wrap.feedback-message
+                  textarea.wpcf7-form-control.wpcf7-textarea.form__input.form__input--textarea(name='feedback-message', cols='40', rows='10', aria-invalid='false', placeholder='Опишите подробнее Вашу заявку')
+            .form__row
+              .form__item
+                span.wpcf7-form-control-wrap.agreement_subscription
+                  span.wpcf7-form-control.wpcf7-acceptance.optional
+                    span.wpcf7-list-item
+                      label
+                        input.sr-only.form__input-checkbox#agreement_subscription(type='checkbox', name='agreement_subscription', value='1', aria-invalid='false')
+                        span.wpcf7-list-item-label Подписаться на блог о PR и event-менеджменте
+          .form__nav
+            button.btn.is-lg.form__submit(type='submit')
+              br
+              span Отправить
+              svg(width='38', height='27', viewBox='0 0 38 27', fill='none', xmlns='http://www.w3.org/2000/svg')
+                path(fill-rule='evenodd', clip-rule='evenodd', d='M32.0441 11.5L23.6959 1.98957L25.9505 0.010498L37.4945 13.1617L25.9506 26.3128L23.6959 24.3338L32.3279 14.5H0V11.5H32.0441Z', fill='white')
+              br
+            p
+            .form__agreement
+              | Нажимая на кнопку, вы даете
+
+              a(href='/privacy-policy/', target='_blank') согласие на обработку своих персональных данных
+          .wpcf7-response-output(aria-hidden='true')
+      .form__success Успешно отправлена!
+
+a.to-top(href='#top')
+  svg(width='38', height='27', viewBox='0 0 38 27', fill='none', xmlns='http://www.w3.org/2000/svg')
+    path(fill-rule='evenodd', clip-rule='evenodd', d='M32.0441 11.5L23.6959 1.98957L25.9505 0.010498L37.4945 13.1617L25.9506 26.3128L23.6959 24.3338L32.3279 14.5H0V11.5H32.0441Z', fill='white')
+
+#fancybox-tmp
+#fancybox-loading
+  div
+#fancybox-overlay
+#fancybox-wrap.fancybox-ie
+  #fancybox-outer
+    .fancybox-bg#fancybox-bg-n
+    .fancybox-bg#fancybox-bg-ne
+    .fancybox-bg#fancybox-bg-e
+    .fancybox-bg#fancybox-bg-se
+    .fancybox-bg#fancybox-bg-s
+    .fancybox-bg#fancybox-bg-sw
+    .fancybox-bg#fancybox-bg-w
+    .fancybox-bg#fancybox-bg-nw
+    #fancybox-content
+    a#fancybox-close
+    #fancybox-title
+    a#fancybox-left
+      span.fancy-ico#fancybox-left-ico
+    a#fancybox-right
+      span.fancy-ico#fancybox-right-ico
+script(src='{{ site.assets ~ \'/js/bundle.min.js\', }}')
+script(src='{{ site.assets ~ \'/js/app.min.js\', }}')

@@ -1,0 +1,163 @@
+{
+  "name": "polylog-2021",
+  "version": "1.0.0",
+  "description": "_s based WordPress theme",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^12.1.0",
+    "animate.css": "github:daneden/animate.css",
+    "dir-archiver": "^1.1.1",
+    "html5-boilerplate": "github:h5bp/html5-boilerplate",
+    "node-sass": "^4.14.1",
+    "popper.js": "^1.16.1"
+  },
+  "scripts": {
+    "watch": "node-sass sass/ -o ./ --source-map true --output-style expanded --indent-type tab --indent-width 1 -w",
+    "compile:css": "node-sass sass/ -o ./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
+    "compile:rtl": "rtlcss style.css style-rtl.css",
+    "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
+    "lint:js": "wp-scripts lint-js 'js/*.js'",
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-sass-guidelines"
+    ],
+    "ignoreFiles": [
+      "**/*.css",
+      "**/*.html",
+      "node_modules/**/*"
+    ],
+    "rules": {
+      "comment-whitespace-inside": "always",
+      "font-family-name-quotes": "always-where-recommended",
+      "function-parentheses-space-inside": "never-single-line",
+      "max-nesting-depth": 3,
+      "media-feature-colon-space-after": "always",
+      "media-feature-colon-space-before": "never",
+      "media-feature-range-operator-space-after": "always",
+      "media-feature-range-operator-space-before": "always",
+      "no-duplicate-selectors": true,
+      "number-leading-zero": "never",
+      "order/order": [
+        "custom-properties",
+        "dollar-variables",
+        {
+          "type": "at-rule",
+          "name": "include"
+        },
+        "declarations",
+        "rules",
+        {
+          "type": "at-rule",
+          "name": "include",
+          "hasBlock": true
+        }
+      ],
+      "order/properties-alphabetical-order": null,
+      "property-no-unknown": [
+        true,
+        {
+          "ignoreProperties": [
+            "appearance"
+          ]
+        }
+      ],
+      "rule-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "after-comment",
+            "inside-block"
+          ]
+        }
+      ],
+      "scss/at-extend-no-missing-placeholder": null,
+      "scss/dollar-variable-colon-space-after": null,
+      "selector-attribute-quotes": "always",
+      "selector-class-pattern": "[a-zA-Z0-9]+[a-za-zA-Z0-9-_]*"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "airbnb-base",
+      "plugin:prettier/recommended"
+    ],
+    "globals": {
+      "wp": true
+    },
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true,
+      "jquery": true
+    },
+    "plugins": [
+      "eslint-plugin-prettier",
+      "import"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 2021,
+      "sourceType": "module"
+    },
+    "settings": {
+      "import/core-modules": [],
+      "import/ignore": [
+        "node_modules",
+        "\\.(coffee|scss|css|less|hbs|svg|json)$"
+      ]
+    },
+    "rules": {
+      "import/no-extraneous-dependencies": "off",
+      "max-len": [
+        "error",
+        {
+          "ignoreComments": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true
+        }
+      ],
+      "no-multi-spaces": [
+        "error",
+        {
+          "exceptions": {
+            "BinaryExpression": true,
+            "VariableDeclarator": true
+          }
+        }
+      ],
+      "no-plusplus": [
+        2,
+        {
+          "allowForLoopAfterthoughts": true
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "trailingComma": "es5",
+    "overrides": [
+      {
+        "files": [
+          "*.html"
+        ],
+        "options": {
+          "printWidth": 1000
+        }
+      }
+    ]
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

@@ -1,0 +1,39 @@
+//- Icon
+mixin icon(name, classes)
+  svg.icon(class=classes aria-hidden='true' focusable='false')
+    use(href=`${site.baseUrl}images/_project/base/graphics/sprite.svg#icon-${name}`)
+
+//- Button
+mixin button(label, icon=false, classes=false, iconOnly=false, type='button')
+  button.btn(class=classes, type=type, onclick!=attributes.onclick)
+    if icon
+      +icon(icon)
+    span(class=(iconOnly ? 'sr-only' : 'btn__label'))= label
+
+//- Form item (.form__item container should be added explicit)
+//- Omitting arguments with default values are not allowed
+//- I.e. don't do like this +formItem('My Label', my-input, , , alert='Message')
+//- In the field IDs, we do not use the `form-` prefix
+mixin formItem(label, name, type='text', labelClass=false, alert=false)
+  label(class=labelClass || false, for= name)= label
+  input.form__control(id= name, name= name, type= type, inputmode!=attributes.inputmode, value!=attributes.value, maxlength!=attributes.maxlength, pattern!=attributes.pattern, required!=attributes.required, placeholder!=attributes.placeholder)
+  if alert
+    .form__alert(role='alert')= alert
+
+//- List view snippet
+mixin teaser(id, title, summary, img=false, link='#')
+  article.view-list__item(id=id, itemscope, itemtype='http://schema.org/Article')
+    a.view-list__wrapper-link(href= link)
+      figure.view-list__item-img
+        if img
+          img(src=`${site.baseUrl}images/_project/placeholders/thumbnail-${img}.jpg` alt='')
+      .view-list__item-copy
+        h3.view-list__item-title(itemprop='headline')= title
+        p.view-list__item-summary(itemprop='description')= summary
+//-
+  +teaser(
+    'id',
+    'title',
+    'summary',
+    'img'
+  )

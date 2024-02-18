@@ -1,0 +1,68 @@
+{#
+TODO: Edit head for dynamic templates
+1) Remove <title> and <style>. It will be added by wp_head().
+2) Uncomment wp_head().
+WP Core, Yoast SEO, Polyllang and W3 Total Cache will add:
+- title
+- description
+- OG protocol and fb:app_id
+- Twitter card
+- canonical link
+- JSON-LD
+- regional URLs (hreflangs)
+- sitemap (?)
+- RSS
+- dns-prefetch.
+3) Turn on GTM.
+4) And don't forget to place favicon.ico in the root directory
+and 192×192 icon.png in theme direcory.
+For favicon open 32×32 png in Preview app. Export… And hold hold ⌥ (the option /
+alt key) while clicking on the formats dropdown. Chose Microsoft Icon
+Edit site.manifest
+5) Keep the first line empty for more accurate WP output
+#}
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if post.title %}{{ post.title|striptags|replace({'&nbsp;': ' ', '&amp;': '&', '&rsquo;', '’'})|escape }} | {% endif %}{% if post.section %}{{ post.section }} | {% endif %}{{ site.name[post.lang] }}</title>
+
+{% if site.author.summary %}
+  <meta name="author" content="{{ site.author.summary }}">
+{% endif %}
+{# SEO deals w/ HTTPS #}
+  <meta name="referrer" content="origin">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="apple-mobile-web-app-title" content="{{ site.short_name }}">
+{% if site.icon %}
+  {# Apple touch icon. In most cases, one 192×192px touch icon named icon.png
+  is enough #}
+  <link rel="apple-touch-icon" href="{{ site.assets ~ site_apple_touch_icon }}">
+{% endif %}
+{% if site.facebook_cta_like %}
+  <link rel="preconnect" href="https://staticxx.facebook.com">
+{% endif %}
+{% if site.fonts.local %}
+{% for font in site.fonts.local %}
+  <link rel="preload" href="{{ site.assets ~ font }}.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="{{ site.assets ~ font }}.woff" as="font" type="font/woff" crossorigin="anonymous">
+{% endfor %}
+{% endif %}
+{% if site.fonts.google %}
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={{ site.fonts.google }}&display=swap">
+{% endif %}
+  <link rel="stylesheet" href="{{ site.assets ~ '/css/style.css' }}">
+{% if post.wip %}
+  <link rel="stylesheet" href="{{ site.assets ~ '/css/head.css' }}">
+{% endif %}
+  <meta name="theme-color" content="{{ site.colors.browser }}">
+
+{# Google Tag Manager #}
+{% if site.gtm %}
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','{{ site.gtm }}');</script>
+{% endif %}

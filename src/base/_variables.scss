@@ -1,0 +1,464 @@
+// stylelint-disable declaration-colon-space-after, order/order
+@use 'sass:math';
+
+// -----------------------------------------------------------------------------
+// 🎨 COLORS
+// -----------------------------------------------------------------------------
+// #region
+
+// FUNCTIONAL PALETTE
+// For semantic shades use the darken() function.
+// E. g. $color-ink-link: darken($blue, 13%);
+// $color-ink-code: darken($magenta, 21%);
+
+$red:     hsl(12 100% 50%);
+$yellow:  hsl(60 100% 50%);
+$green:   hsl(156 100% 35%);
+$blue:    hsl(205 100% 50%);
+$magenta: hsl(301 100% 50%);
+
+// To create other colors change hue by 30. red: 0, orange: 30, yellow: 60,
+// lime: 90, green: 120, turquoise: 150, cyan: 180, cobalt: 210, blue: 210,
+// violet: 270, magenta: 330.
+
+// Neutral colors
+$dark-max:                              #000;
+$dark-beta:                             hsla(0, 0%, 0%, .87);
+$dark-2ry:                              hsla(0, 0%, 0%, .54);
+$dark-3ry:                              hsla(0, 0%, 0%, .38);
+$dark-psi:                              hsla(0, 0%, 0%, .12);
+$dark-min:                              hsla(0, 0%, 0%, .03);
+
+$light-max:                             #fff;
+$light-beta:                            hsla(0, 0%, 100%, .87);
+$light-2ry:                             hsla(0, 0%, 100%, .6);
+$light-3ry:                             hsla(0, 0%, 100%, .38);
+$light-psi:                             hsla(0, 0%, 100%, .12);
+
+// COLOR ROLES
+
+// Brand blue
+$color-primary:          $red;
+$color-primary-bg:       lighten($red, 40%);
+$color-primary-bg-dark:  darken($red, 11%);
+$color-ink-primary-fill: $color-primary;
+$color-ink-primary-text: darken($red, 8%);
+$color-primary-scrim:    rgba($red, .8);
+
+// SECONDARY COLOR can be used for buttons and mobile drawer header
+// $color-secondary:                       desaturate($color-primary, 25%);
+
+// BASE BACKGROUNDS
+// For the sake of design, we can violate the recommendations in contrast, but
+// only where, it will not spoil the UX.
+$color-background-base:      $light-max;
+$color-background-alt:       $dark-min;
+$color-background-highlight: $blue;
+$color-background-inverse:   $dark-max;
+$color-background-scrim:     rgba(#000, .72);
+
+// FEEDBACK COLORS
+// Use relative luminance calculator in order to achieve backgrounds consistency
+// To create colored text use contrast checkers to keep the necessary level
+// of contrast for the body copy and headings: 4.5 and 3, respectively.
+
+// Recommended relative luminance of lightest tints
+// Red - 78.5
+// Brown - 78.8
+// Orange - 88.6
+// Yellow - 88
+// Green - 87.8
+// Blue — 85.5
+// Violet - 80.7
+// magenta - 81.34
+// Grey - 87
+$color-error:      $yellow;
+$color-error-bg:   lighten($color-error, 45%);
+$color-error-fill: lighten($color-error, 7%);
+$color-error-text: darken($color-error, 5%);
+
+$color-warning:      $yellow;
+$color-warning-bg:   lighten($yellow, 45%);
+$color-warning-fill: lighten($color-error, 7%);
+$color-warning-text: darken($color-error, 5%);
+
+$color-info:      $blue;
+$color-info-bg:   lighten($blue, 39%);
+$color-info-fill: lighten($blue, 6%);
+$color-info-text: darken($blue, 5%);
+
+$color-success:      $green;
+$color-success-bg:   lighten($green, 45%);
+$color-success-fill: darken($green, 7%);
+$color-success-text: darken($green, 14%);
+
+$color-highlight:                       $color-success-bg;
+
+
+// INKS / FOREGROUNDS
+// Inks are foreground colors for texts, borders, and icons.
+// In order to use the sass contrast check functions, the colors should
+// be moved to the map.
+$color-ink-title:     $dark-max;
+$color-ink-base:      $dark-beta;
+$color-ink-2ry:       $dark-2ry;
+$color-ink-3ry:       $dark-3ry;
+$color-ink-border:    $dark-psi;
+$color-ink-icon:      $dark-3ry;
+$color-ink-link:      $dark-max;
+$color-ink-highlight: $color-ink-primary-text;
+
+$color-ink-inverse-title:               $light-max;
+$color-ink-inverse-normal:              $light-beta;
+$color-ink-inverse-2ry:                 $light-2ry;
+$color-ink-inverse-3ry:                 $light-3ry;
+$color-ink-inverse-icon:                $light-3ry;
+$color-ink-inverse-link:                lighten($blue, 5%);
+
+$color-border-dark:                     $dark-psi;
+$color-border-light:                    $light-max;
+
+$hover-brightness:                      1.2;
+// #endregion
+
+// ---------------------------------------------------------------------------
+// 📰 LAYOUT
+// ---------------------------------------------------------------------------
+// #region
+
+$size-half: .4rem;
+$size-1:    .8rem;
+$size-1p5:  $size-1 * 1.5;
+$size-2:    $size-1 * 2;
+$size-2p5:  $size-1 * 2.5;
+$size-3:    $size-1 * 3;
+$size-4:    $size-1 * 4;
+$size-5:    $size-1 * 5;
+$size-6:    $size-1 * 6;
+$size-7:    $size-1 * 7;
+$size-8:    $size-1 * 8;
+
+// For larger values use derived lines. E.g. $size-line * 3
+$size-line:                             $size-3;
+
+$spacers: (
+  0:  0,
+  1s: $size-1,
+  2s: $size-2,
+  4s: $size-4,
+  5s: $size-5,
+  7s: $size-7,
+  8s: $size-8,
+  1:  $size-line,
+  2:  $size-line * 2,
+  3:  $size-line * 3,
+  4:  $size-line * 4,
+);
+
+// Bootstrap mixins variables
+$grid-breakpoints: (
+  xs:   0,
+  sm:   568px,
+  md:   768px, // Use the same layout as on sm, but with vertical navbar
+  lg:   1024px,
+  xl:   1312px,
+  // xl:  1440px,
+  // xxl: 1920px,
+  // jumbo: 2560px // iMac 27''
+);
+
+$grid-gutter-width:                     $size-2;
+$grid-gutter-lg:                        $size-4;
+$grid-gutter-xl:                        $size-6;
+
+// Maps to generate maximum width of the container for each breakpoint
+$container-max-widths: (
+  lg: 960px,
+  xl: 1240px,
+
+  // Full HD - 1920x1080 and up: 136*12 + 8*11
+  // xxl: 1784px
+);
+
+// Using: @media #{$mq-retina} { … }
+$mq-retina: 'print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi)';
+// #endregion
+
+// #endregion
+
+// ---------------------------------------------------------------------------
+// 📦 COMPONENT BOXES
+// ---------------------------------------------------------------------------
+// #region
+
+$size-border-width: .1rem;
+
+// BOX BORDER RADIUS
+
+// Alerts, Cards, Rectangular Images
+$shape-border-radius-sm:   .3rem;
+
+// Buttons
+$shape-border-radius-base: .5rem;
+
+// Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks, Popovers, Tooltips
+$shape-border-radius-lg:   1.2rem;
+
+// Modals
+$shape-border-radius-xl:   2.4rem;
+
+// Pill Shapes
+$shape-border-radius-pill: 100vmax;
+
+// BOX SHADOWS
+// Increasing the number of shadows and decreasing the alpha value.
+// The difference of arithmetic progression can be changed. E.g., by making it
+// equal 8, we can achieve very soft shadows of the highest level: 1-9-17-25-33
+// Another method: create shape in Photoshop with minimum and maximum
+// elevation shadows and then create tween to get intermediate values.
+
+$layer-box-shadow-contour:             0 0 0 1px rgba(0, 0, 0, .06);
+
+// Buttons, Cards, Alerts, App Bar, Tab Bar, Switches
+$layer-box-shadow-z1:                         0 1px 1px 0 rgba(0, 0, 0, .04);
+
+// FAB, Buttons hover, Snackbars
+$layer-box-shadow-z2:
+  0 1px 1px 0 rgba(0, 0, 0, .04),
+  0 13px 13px -1px rgba(0, 0, 0, .04);
+
+// FAB hover, Drawers, Dropdowns, Modal Bottom Sheets, Pickers, Sticky Blocks
+$layer-box-shadow-z3:
+  0 1px 1px 0 rgba(0, 0, 0, .04),
+  0 13px 13px -1px rgba(0, 0, 0, .04),
+  0 25px 25px -3px rgba(0, 0, 0, .04);
+
+// Popovers, Tooltips
+$layer-box-shadow-z4:
+  0 1px 1px 0 rgba(0, 0, 0, .04),
+  0 13px 13px -1px rgba(0, 0, 0, .04),
+  0 25px 25px -3px rgba(0, 0, 0, .04),
+  0 37px 37px -6px rgba(0, 0, 0, .04);
+
+// Modals
+$layer-box-shadow-z5:
+  0 1px 1px 0 rgba(0, 0, 0, .04),
+  0 13px 13px -1px rgba(0, 0, 0, .04),
+  0 25px 25px -3px rgba(0, 0, 0, .04),
+  0 37px 37px -6px rgba(0, 0, 0, .04),
+  0 24px 48px -12px rgba(0, 0, 0, .04);
+
+$layer-box-shadow-focus-outline:        0 0 0 4px rgba($blue, .5);
+$layer-box-shadow-border:               inset 0 0 0 3px #101010;
+
+// BOX Z-INDEX
+$zindex-dropdown:                       1000;
+$zindex-sticky:                         1020;
+$zindex-fixed:                          1030;
+$zindex-popover:                        1040;
+$zindex-tooltip:                        1050;
+$zindex-scrim:                          1060;
+$zindex-drawer:                         1070;
+$zindex-modal:                          1080;
+
+// Material design order
+// https://material.io/design/environment/elevation.html
+// Dialog: 24dp
+// Nav drawer: 16dp
+// FAB: 6dp
+// App bar: 4dp
+// Button: 2dp
+// Card: 1dp to 8dp (for dragging)
+
+
+// PANEL WIDTHS
+
+$width-xs:           20rem;
+
+// Tooltips, mobile drawers
+$width-sm:           28rem;
+
+// Dropdowns, popovers, tablet and desktop drawers
+$width:              32rem;
+
+// Wide drawers, modals on tablets
+$width-md:           64rem;
+
+// Modals on desktops
+$width-lg:           80rem;
+
+$width-readable:     60ch;
+$width-readable-abs: 62.2rem;
+$width-icon:         2.4rem;
+
+$chevron-down:       url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpolygon%20fill-rule%3D%22evenodd%22%20points%3D%2216%208%2014.59%206.59%2010%2011.17%205.41%206.59%204%208%2010%2014%22%2F%3E%3C%2Fsvg%3E%0A');
+$chevron-right:      url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpolygon%20fill-rule%3D%22evenodd%22%20points%3D%228%204%206.59%205.41%2011.17%2010%206.59%2014.59%208%2016%2014%2010%22%2F%3E%3C%2Fsvg%3E');
+
+// #endregion
+
+// ---------------------------------------------------------------------------
+// 👻 ANIMATION & TRANSITIONS
+// ---------------------------------------------------------------------------
+// #region
+
+// Micro-interactions such as button and toggle
+$duration-xxs:       .07s;
+
+// Micro-interactions such as fade
+$duration-xs:        .11s;
+
+// Micro-interactions, small expansion, short distance movements
+$duration-sm:        .15s !default;
+
+// Expansion, system communication, toast
+$duration-md:        .24s !default;
+
+// Large expansion, important system notifications
+$duration-lg:        .4s !default;
+
+// Background dimming
+$duration-xl:        .7s !default;
+
+$duration-huge:      $duration-xl * 7;
+$duration-king-size: $duration-xl * 10;
+
+$easing-base:          cubic-bezier(.4, 0, .2, 1);            // accented ease-in-out
+$easing-appearance:    cubic-bezier(0, 0, .2, 1);             // accented ease-out
+$easing-disappearance: cubic-bezier(.4, 0, 1, 1);             // ease-in
+$easing-bounce:        cubic-bezier(.175, .885, .32, 1.275);
+
+// #endregion
+
+// ---------------------------------------------------------------------------
+// 🔠 TYPOGRAPHY & PADDING
+// ---------------------------------------------------------------------------
+// #region
+
+/* stylelint-disable indentation */
+// Neo-grotesque is our everything
+$font-family-system-sans:  -apple-system, BlinkMacSystemFont, Inter, 'Helvetica Neue', Roboto, 'Arial Nova', 'Nimbus Sans', Arial, sans-serif !default;
+
+$font-family-base: $font-family-system-sans;
+$font-family-title: Gilroy, $font-family-system-sans;
+
+$font-family-monospace:
+ 'Fira Code',
+  Menlo,
+  Courier,
+ 'Courier New',
+  monospace;
+
+$font-family-serif:
+ 'EB Garamond',
+  Georgia,
+  Times,
+ 'Times New Roman',
+  serif,
+ 'Apple Color Emoji',
+ 'Segoe UI Emoji',
+ 'Segoe UI Symbol',
+ 'Noto Color Emoji';
+
+:root {
+  --list-bullet:            url('data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%225%22%20height%3D%227%22%20viewBox%3D%220%200%205%207%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M2.5%205C3.88071%205%205%203.88071%205%202.5C5%201.11929%203.88071%200%202.5%200C1.11929%200%200%201.11929%200%202.5C0%203.88071%201.11929%205%202.5%205Z%22%20fill%3D%22%23FF3300%22%2F%3E%3C%2Fsvg%3E%0A');
+
+  --font-family-base:       #{$font-family-base};
+  --font-family-title:      #{$font-family-title};
+
+  --font-scale-factor:      1.333;                                                                                                                                                                                                                                                                                                                                                                                                                       // 3:4, perfect fourth
+
+  --font-size-adaptive-1:   1.6vh;
+  --font-size-adaptive-1d5: 2.4vh;
+  --font-size-adaptive-3:   3.2vh;
+  --font-size-adaptive-100: 16vh;
+  --font-size-adaptive-150: 24vh;
+
+  --font-size-jumbo:      6.8rem;
+  --line-height-jumbo:    #{math.div(72, 68)};
+  --padding-top-jumbo:    1.3rem;
+  --padding-bottom-jumbo: 1.2rem;
+
+  --font-size-hero:      5.1rem;
+  --font-weight-hero:    800;
+  --line-height-hero:    #{math.div(56, 51)};
+  --padding-top-hero:    .3rem;
+  --padding-bottom-hero: 1.4rem;
+
+  --font-size-title:              3.8rem;
+  --line-height-title:            #{math.div(40, 38)};
+  --font-weight-title:            800;
+  --padding-top-title:            1.5rem;
+  --padding-bottom-title:         1.8rem;
+  --margin-top-title-has-eyebrow: #{-$size-line};
+
+  --font-size-h2:      2.8rem;
+  --line-height-h2:    #{math.div(32, 28)};
+  --font-weight-h2:    800;
+  --padding-top-h2:    2.2rem;
+  --padding-bottom-h2: 1.8rem;
+  --margin-top-h2:     #{$size-line};
+
+  --font-size-big:      2.1rem;
+  --line-height-big:    #{math.div(24, 21)};
+  --font-weight-big:    800;
+  --padding-top-big:    .7rem;
+  --padding-bottom-big: 1.7rem;
+
+  --font-size-big-static:      2.1rem;
+  --line-height-big-static:    #{math.div(24, 21)};
+  --padding-top-big-static:    .7rem;
+  --padding-bottom-big-static: 1.7rem;
+
+  --font-size-base:      1.6rem;
+  --line-height-base:    1.5;
+  --font-weight-base:    normal;
+  --padding-top-base:    .8rem;
+  --padding-bottom-base: 1.6rem;
+
+  --font-size-small:      1.2rem;
+  --line-height-small:    #{math.div(16, 12)};
+  --padding-top-small:    1.3rem;
+  --padding-bottom-small: 2rem;
+
+  // Container
+  --padding-x-container:  #{$size-2p5};
+
+  // Table
+  --margin-top-table:    #{$size-line};
+  --margin-bottom-table: #{$size-line};
+  --padding-x-cell:      #{$size-2};
+  --padding-y-cell:      1.1rem;
+
+  @media screen and (min-width: #{map-get($grid-breakpoints, 'lg')}) {
+    --font-scale-factor:    1.667;                  // 3:5, major six
+
+    --font-size-jumbo:      20.5rem;
+    --line-height-jumbo:    #{math.div(208, 205)};
+    --padding-top-jumbo:    1.6rem;
+    --padding-bottom-jumbo: 1.7rem;
+
+    --font-size-hero:      12.3rem;
+    --line-height-hero:    #{math.div(128, 123)};
+    --padding-top-hero:    1.3rem;
+    --padding-bottom-hero: .3rem;
+
+    --font-size-title:      7.4rem;
+    --line-height-title:    #{math.div(80, 74)};
+    --padding-top-title:    .6rem;
+    --padding-bottom-title: 1rem;
+
+    --font-size-h2:      4.4rem;
+    --line-height-h2:    #{math.div(48, 44)};
+    --padding-top-h2:    .9rem;
+    --padding-bottom-h2: 1.6rem;
+
+    --font-size-big:       2.7rem;
+    --line-height-big:     #{math.div(32, 27)};
+    --padding-top-big:     .1rem;
+    --padding-bottom-big:  1.5rem;
+
+    --padding-x-container: #{$size-2p5};
+  }
+}
+// #endregion
+

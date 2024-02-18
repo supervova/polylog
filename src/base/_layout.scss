@@ -1,0 +1,31 @@
+.row {
+  --gutter-x: #{$size-3};
+  --gutter-y: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: calc(var(--gutter-y) * -1);
+  margin-right: calc(var(--gutter-x) / -2);
+  margin-left: calc(var(--gutter-x) / -2);
+
+  > * {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    margin-top: var(--gutter-y);
+    padding-right: calc(var(--gutter-x) / 2);
+    padding-left: calc(var(--gutter-x) / 2);
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.col {
+  flex: 1 0 0%;
+}
+
+@include media-breakpoint-up(lg) {
+  .col-lg-6 {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}

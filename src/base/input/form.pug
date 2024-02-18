@@ -1,0 +1,62 @@
+include /pages-pug/base/mixins
+
+//- MARKUP
+
+//- Full width input
+
+.form__item
+  label(for='form-textarea') Caption
+  textarea#form-textarea.form-control(required, placeholder='Required example textarea')
+  .form__alert(role='alert') Message
+
+//- Input in row
+.qwt-row
+  .form__item.qwt-col-sm-4
+    +formItem('Caption', 'my-name', 'text', false, 'Message')(required=true)
+
+//- Inputs with prefixes and / or suffixes
+.form__item.qwt-col-sm-4
+  label.form__label(for='form-input2') Caption
+  .form__group
+    span.form__control-prefix $
+    span.form__control-suffix .00
+    input#form-input2.form__control(type='text', required)
+    .form__alert(role='alert') Message
+
+//- ----------------------------------------------------------------------------
+//- FULL FORM
+//- ----------------------------------------------------------------------------
+
+form#form-needs-validation(action='/', method='post', novalidate)
+  input(type='hidden', name='my-hidden-stuff', value='')
+
+  .form__item
+    +formItem('Name', 'name', 'text', false, 'Message')(value='', maxlength='128', pattern='[A-Za-z -]+', required=true)
+
+  .form__item
+    +formItem('Email', 'email', 'email', false, 'Message')(inputmode='email', value='', maxlength='128', required=true)
+
+  .qwt-row
+    .form__item.qwt-col-4
+      +formItem('Country code', 'country-code', 'text', false, 'Message')(inputmode='numeric', value='', maxlength='3', pattern='\d{3}', required=true)
+
+    .form__item.qwt-col-8
+      +formItem('Phone number', 'phone', 'text', false, 'Message')(inputmode='numeric', value='', maxlength='9', pattern='\d{8,9}', required=true)
+
+  .form__item
+    label(for='form-state') State
+    select#form-state.form__control.is-select(name='state')
+      option(value='AL') Alabama
+      option(value='AK') Alaska
+      option(value='AZ') Arizona
+
+  .form__item.has-checkbox
+    input#form-terms.form__input(type='checkbox', name='terms', required)
+    label(for='form-terms')
+      | You agree to our
+      a(href='', target='_blank', rel='noopener noreferrer') Terms
+    .form__alert(role='alert') Message
+
+  button#form-submit.btn.is-submit(type='submit') Sign Up
+    svg.spinner.is-sm(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 48 48')
+      circle.spinner__circle(cx='24', cy='24', r='20')

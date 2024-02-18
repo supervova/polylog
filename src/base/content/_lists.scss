@@ -1,0 +1,82 @@
+// LISTS
+
+// .list-caption may be a span
+.list-caption {
+  display: block;
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-li);
+}
+
+ol,
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: var(--padding-bottom-list);
+}
+
+li {
+  padding-top: var(--padding-top-base);
+  padding-bottom: var(--padding-bottom-li);
+}
+
+ul {
+  list-style-image: var(--list-bullet);
+  padding-left: $size-2;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 0;
+  }
+}
+
+ol ol,
+ul ul,
+ul ol {
+  padding-left: $size-2;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  padding-bottom: 0;
+}
+
+nav ol,
+nav ul,
+.list.is-unstyled,
+%list-unstyled {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list.is-inline,
+%list-inline {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: .5rem;
+    }
+  }
+}
+
+dt {
+  display: inline-block;
+  font-weight: bolder;
+  padding-right: .3ch;
+}
+
+dd {
+  display: inline;
+  margin-left: 0;
+
+  &:not(:last-child)::after {
+    content: '';
+    display: block;
+    height: $size-line;
+  }
+}
